@@ -1,6 +1,6 @@
 #include<stdio.h>
 
 int main(void){
-	printf("Hello World!");
+	printf("Acorda pra chupar Wesley!! 8==D");
 return 0;
 }
