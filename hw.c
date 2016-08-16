@@ -1,6 +1,6 @@
 #include<stdio.h>
 
 int main(void){
-	printf("Acorda pra chupar Wesley!! 8==D");
+	printf("E NOIX FEIX ISSU AKI");
 return 0;
 }
