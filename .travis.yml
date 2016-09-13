@@ -1,0 +1,3 @@
+language: c
+script: gcc hw.c -o hw && ./hw
+compiler: gcc
