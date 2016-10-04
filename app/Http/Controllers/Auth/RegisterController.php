@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Http\Controllers\Auth;
+namespace PI\Http\Controllers\Auth;
 
-use App\User;
+use PI\Models\User;
 use Validator;
-use App\Http\Controllers\Controller;
+use PI\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\RegistersUsers;
 
 class RegisterController extends Controller
@@ -63,7 +63,10 @@ class RegisterController extends Controller
     protected function create(array $data)
     {
         return User::create([
+            'Cpf' => $data['Cpf'],
             'name' => $data['name'],
+            'endereço' => $data['endereço'],
+            'telefone' => $data['telefone'],
             'email' => $data['email'],
             'password' => bcrypt($data['password']),
         ]);

@@ -11,13 +11,17 @@
 |
 */
 
-$factory->define(App\User::class, function (Faker\Generator $faker) {
+$factory->define(PI\Models\User::class, function (Faker\Generator $faker) {
     static $password;
 
     return [
+    	'Cpf' => str_random(10),
         'name' => $faker->name,
+        'telefone' => $faker->phoneNumber,
+        'endereço' => $faker->streetAddress,
         'email' => $faker->unique()->safeEmail,
         'password' => $password ?: $password = bcrypt('secret'),
         'remember_token' => str_random(10),
     ];
 });
+

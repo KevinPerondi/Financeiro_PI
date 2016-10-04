@@ -162,6 +162,8 @@ return [
         Illuminate\Translation\TranslationServiceProvider::class,
         Illuminate\Validation\ValidationServiceProvider::class,
         Illuminate\View\ViewServiceProvider::class,
+        Bestmomo\Scafold\ScafoldServiceProvider::class,
+
 
         /*
          * Package Service Providers...
@@ -172,11 +174,11 @@ return [
         /*
          * Application Service Providers...
          */
-        App\Providers\AppServiceProvider::class,
-        App\Providers\AuthServiceProvider::class,
-        // App\Providers\BroadcastServiceProvider::class,
-        App\Providers\EventServiceProvider::class,
-        App\Providers\RouteServiceProvider::class,
+        PI\Providers\AppServiceProvider::class,
+        PI\Providers\AuthServiceProvider::class,
+        // PI\Providers\BroadcastServiceProvider::class,
+        PI\Providers\EventServiceProvider::class,
+        PI\Providers\RouteServiceProvider::class,
 
     ],
 
