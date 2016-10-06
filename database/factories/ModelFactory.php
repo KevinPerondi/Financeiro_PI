@@ -25,3 +25,15 @@ $factory->define(PI\Models\User::class, function (Faker\Generator $faker) {
     ];
 });
 
+$factory->define(PI\Models\Despesa::class, function (Faker\Generator $faker) {
+
+
+    return [
+    	'valor' => $faker->randomDigit,
+        'descrição' => $faker->sentence,
+       
+    ];
+});
+
+
+

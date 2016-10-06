@@ -11,11 +11,20 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+
+
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index');
-Route::get('/welcome', 'UsersController@index');
+
+Route::get('/', function (){
+    return view('home');
+    
+});
+Route::get('/users', ['as'=> 'users.home','uses'=>'UsersController@index']);
+Route::get('/users/create',['as' => 'users.create', 'uses' =>'UsersController@create']);
+Route::post('/users/store',['as' => 'users.store', 'uses' =>'UsersController@store']);
+
+Route::get('/despesas', ['as'=> 'despesas.home','uses'=>'DespesasController@index']);
+Route::get('/despesas/create',['as' => 'despesas.create', 'uses' =>'DespesasController@create']);
+Route::post('/despesas/store',['as' => 'despesas.store', 'uses' =>'DespesasController@store']);

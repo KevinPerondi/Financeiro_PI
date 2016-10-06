@@ -6,9 +6,31 @@ use Illuminate\Http\Request;
 
 use PI\Http\Requests;
 
-class UsersController extends Controller
+class DespesasController extends Controller
 {
-    public function index () {
-    	return view('users.index');
+    
+    
+        
+    public function __construct(\PI\Repositories\DespesaRepositoryEloquent $repository) {
+        $this->repository =$repository;
+    }
+
+    public function index (\PI\Repositories\DespesaRepositoryEloquent $repository) {
+    	
+        $despesas = $this->repository->paginate(5);
+        return view('despesas.index', compact('despesas'));
+    }
+    
+    
+    public function create(){
+       return view('despesas.create');
+    }
+    
+    public function store (\Symfony\Component\HttpFoundation\Request $request){
+        $data = $request->all();
+        $this->repository->create($data);
+        
+        return redirect()->route('despesas.home');
+        
     }
 }

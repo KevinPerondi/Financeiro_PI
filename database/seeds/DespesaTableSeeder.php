@@ -2,7 +2,7 @@
 
 use Illuminate\Database\Seeder;
 
-class UserTableSeeder extends Seeder
+class DespesaTableSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -11,7 +11,7 @@ class UserTableSeeder extends Seeder
      */
     public function run()
     {
-    	factory(\PI\Models\User::class, 10)->create();
+    	factory(\PI\Models\Despesa::class, 10)->create();
         //
     }
 }

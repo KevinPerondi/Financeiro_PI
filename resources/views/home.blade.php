@@ -4,13 +4,9 @@
 <div class="container">
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
-            <div class="panel panel-default">
-                <div class="panel-heading">Bem Vindo</div>
-                
-                <div class="panel-body">
-                    
-                </div>
-            </div>
+            <a href="{{route('users.home')}}" class="btn btn-default" style="height:40px; width:200px">Ver Usuarios</a>
+            <br><br>
+            <a href="{{route('despesas.home')}}" class="btn btn-default" style="height:40px; width:200px">Ver Despesas</a>
         </div>
     </div>
 </div>

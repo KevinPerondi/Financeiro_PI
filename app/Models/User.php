@@ -2,18 +2,17 @@
 
 namespace PI\Models;
 
+use Illuminate\Database\Eloquent\Model;
+use Prettus\Repository\Contracts\Transformable;
+use Prettus\Repository\Traits\TransformableTrait;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 
-class User extends Authenticatable
-{
-    use Notifiable;
 
-    /**
-     * The attributes that are mass assignable.
-     *
-     * @var array
-     */
+class User extends Authenticatable implements Transformable 
+{
+    use TransformableTrait, Notifiable;
+
     protected $fillable = [
         'Cpf','name', 'email','telefone','endereço', 'password',
     ];
@@ -26,4 +25,5 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
 }
