@@ -3,7 +3,7 @@
 @section('content')
 
 <div class="container">
-    <h3>Cadastro de Usuario</h3>
+    <h3>Cadastro de Despesas</h3>
     
     
     {!! Form::open(['route'=>'despesas.store', 'class'=>'form']) !!}
@@ -19,7 +19,7 @@
     </div>
     
     <div class="form-group">
-        {!! Form::submit('Criar Usuario', ['class'=>'btn btn-primary']) !!}
+        {!! Form::submit('Criar Despesa', ['class'=>'btn btn-primary']) !!}
     </div>
     
     
