@@ -29,7 +29,6 @@ class DespesasController extends Controller
     public function store (\Symfony\Component\HttpFoundation\Request $request){
         $data = $request->all();
         $this->repository->create($data);
-        
         return redirect()->route('despesas.home');
         
     }

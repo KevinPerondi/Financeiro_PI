@@ -29,7 +29,7 @@ $factory->define(PI\Models\Despesa::class, function (Faker\Generator $faker) {
 
 
     return [
-    	'valor' => $faker->randomDigit,
+    	'valor' => $faker->randomFloat,
         'descrição' => $faker->sentence,
        
     ];

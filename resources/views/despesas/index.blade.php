@@ -12,7 +12,7 @@
             <tr>
                 <th>Valor</th>
                 <th>Descrição</th>
-                
+                <th>Vencimento</th>
             </tr>
             
         </thead>
@@ -21,7 +21,7 @@
             <tr>
                  <th>{{$despesa->valor}}</th>
                 <th>{{$despesa->descrição}}</th>
-       
+                <th>{{$despesa->vencimento}}</th>
                 
             </tr>
                 @endforeach    

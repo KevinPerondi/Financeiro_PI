@@ -10,6 +10,6 @@ class Despesa extends Model implements Transformable
 {
     use TransformableTrait;
 
-    protected $fillable = ['valor','descrição'];
+    protected $fillable = ['valor','descrição','vencimento'];
 
 }

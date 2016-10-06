@@ -15,6 +15,8 @@
         {!! Form::label('Descrição', 'Descrição:') !!}
         {!! Form::text('descrição',null,['class'=>'form-control']) !!}   
         
+        {!! Form::label('Vencimento', 'Vencimento:') !!}
+        {!! Form::text('vencimento',null,['class'=>'form-control']) !!}          
         
     </div>
     
