@@ -34,21 +34,21 @@
                 </button>
 
                 <!-- Branding Image -->
-                <a class="navbar-brand" href="{{ url('/') }}">
-                    Finanças
-                </a>
+                <a class="navbar-brand" href="{{ url('/') }}">Finanças</a>
+
             </div>
 
-            <div class="collapse navbar-collapse" id="app-navbar-collapse">
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <!-- Left Side Of Navbar -->
                 <ul class="nav navbar-nav">
-                    &nbsp;
+                    <li><a href="{{ route('users.home') }}">Usuarios</a></li>
+                    <li><a href="{{ route('despesas.home') }}">Despesas</a></li>
                 </ul>
                 
                 <!-- Right Side Of Navbar -->
-                <!--<ul class="nav navbar-nav navbar-right">
+                <ul class="nav navbar-nav navbar-right">
                     <!-- Authentication Links -->
-                <!--    @if (Auth::guest())
+                    @if (Auth::guest())
                         <li><a href="{{ url('/login') }}">Login</a></li>
                         <li><a href="{{ url('/register') }}">Register</a></li>
                     @else
@@ -72,7 +72,7 @@
                             </ul>
                         </li>
                     @endif
-                </ul>-->
+                </ul>
 
                 
             </div>

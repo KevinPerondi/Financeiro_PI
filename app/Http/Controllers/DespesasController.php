@@ -28,4 +28,27 @@ class DespesasController extends Controller
         return redirect()->route('despesas.home');
         
     }
+
+    public function edit($id){
+        $despesa = $this->repository->find($id);
+
+        return view ('despesas.edit',compact('despesa'));
+    }
+
+    public function update(\Symfony\Component\HttpFoundation\Request $request, $id){
+        $data = $request->all();
+        $this->repository->update($data,$id);
+
+        return redirect()->route('despesas.home');
+
+    }
+
+    public function remove(\Symfony\Component\HttpFoundation\Request $request, $id){
+        $data = $request->all();
+        $this->repository->delete($id);
+
+        return redirect()->route('despesas.home');
+
+    }
+
 }

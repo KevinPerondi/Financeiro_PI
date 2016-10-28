@@ -31,5 +31,28 @@ class UsersController extends Controller
         return redirect()->route('users.home');
         
     }
+
+    public function edit($id){
+        $user = $this->repository->find($id);
+
+        return view ('users.edit',compact('user'));
+    }
+
+    public function update(\Symfony\Component\HttpFoundation\Request $request, $id){
+        $data = $request->all();
+        $this->repository->update($data,$id);
+
+        return redirect()->route('users.home');
+
+    }
+
+    public function remove(\Symfony\Component\HttpFoundation\Request $request, $id){
+        $data = $request->all();
+        $this->repository->delete($id);
+
+        return redirect()->route('users.home');
+
+    }
+
     
 }
