@@ -19,12 +19,12 @@
         <tbody>
              @foreach($despesas as $despesa)
             <tr>
-                 <th>{{$despesa->valor}}</th>
+                <th>{{$despesa->valor}}</th>
                 <th>{{$despesa->descrição}}</th>
                 <th>{{$despesa->vencimento}}</th>
                 
             </tr>
-                @endforeach    
+             @endforeach
             
         </tbody>
             
