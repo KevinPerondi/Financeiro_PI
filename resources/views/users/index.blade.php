@@ -13,6 +13,7 @@
                 <th>Cpf</th>
                 <th>Nome</th>
                 <th>Email</th>
+                <th>Ação</th>
             
             </tr>
             
@@ -20,10 +21,18 @@
         <tbody>
              @foreach($users as $user)
             <tr>
-                 <th>{{$user->Cpf}}</th>
-                <th>{{$user->name}}</th>
-                <th>{{$user->email}}</th>
-                
+                <td>{{$user->Cpf}}</td>
+                <td>{{$user->name}}</td>
+                <td>{{$user->email}}</td>
+                <td>
+                    <a href="{{route('users.edit',['id'=>$user->id])}}" class="btn btn-default btn-sm">
+                        Editar
+                    </a>
+                    <a href="{{route('users.remove',['id'=>$user->id])}}" class="btn btn-default btn-sm">
+                        Remover
+                    </a>
+
+                </td>
             </tr>
                 @endforeach    
             
