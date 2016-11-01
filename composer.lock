@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "325aebf316616d99b3085138adf4b48c",
-    "content-hash": "ec35cfc702562dfdf0af6f83efa7cddf",
+    "hash": "dd88782712080f55fddc90e0aa9ac578",
+    "content-hash": "b640f33cf600add9de794e9fc074a2c6",
     "packages": [
         {
             "name": "bestmomo/scafold",
@@ -48,6 +48,46 @@
             "description": "To add scafold to Laravel 5.1",
             "homepage": "http://github.com/bestmomo/scafold",
             "time": "2015-09-30 17:35:12"
+        },
+        {
+            "name": "caouecs/laravel-lang",
+            "version": "3.0.18",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/caouecs/Laravel-lang.git",
+                "reference": "7c5d9ba460165b964408114c2d6e8e32258f3873"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/caouecs/Laravel-lang/zipball/7c5d9ba460165b964408114c2d6e8e32258f3873",
+                "reference": "7c5d9ba460165b964408114c2d6e8e32258f3873",
+                "shasum": ""
+            },
+            "require-dev": {
+                "friendsofphp/php-cs-fixer": "^1.10"
+            },
+            "suggest": {
+                "overtrue/laravel-lang": "Command to add languages in your project"
+            },
+            "type": "library",
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "caouecs",
+                    "email": "caouecs@caouecs.net"
+                }
+            ],
+            "description": "Languages for Laravel",
+            "keywords": [
+                "lang",
+                "languages",
+                "laravel",
+                "lpm"
+            ],
+            "time": "2016-10-31 19:34:07"
         },
         {
             "name": "classpreloader/classpreloader",
@@ -202,6 +242,46 @@
                 "string"
             ],
             "time": "2015-11-06 14:35:42"
+        },
+        {
+            "name": "jailtonsc/validador-cpf-laravel",
+            "version": "v2.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/jailtonsc/validador-cpf-laravel.git",
+                "reference": "0ad80ee78703356bf2f98dfae06d1304cf386079"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/jailtonsc/validador-cpf-laravel/zipball/0ad80ee78703356bf2f98dfae06d1304cf386079",
+                "reference": "0ad80ee78703356bf2f98dfae06d1304cf386079",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.5.9"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "ValidadorCpf\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Jailton S. C.",
+                    "email": "jailton.dos.santos.cruz@gmail.com"
+                }
+            ],
+            "description": "Validador de cpf com suporte para laravel 5.*",
+            "keywords": [
+                "cpf",
+                "laravel"
+            ],
+            "time": "2015-07-12 15:46:10"
         },
         {
             "name": "jakub-onderka/php-console-color",

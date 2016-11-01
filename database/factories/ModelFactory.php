@@ -31,7 +31,7 @@ $factory->define(PI\Models\Despesa::class, function (Faker\Generator $faker) {
     return [
     	'valor' => $faker->randomFloat,
         'descrição' => $faker->sentence,
-        'vencimento' => $faker->date(),
+        'vencimento' => $faker->date('d/m/Y'),
        
     ];
 });

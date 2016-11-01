@@ -14,7 +14,7 @@ class User extends Authenticatable implements Transformable
     use TransformableTrait, Notifiable;
 
     protected $fillable = [
-        'Cpf','name', 'email','telefone','endereço', 'password',
+        'cpf','name', 'email','telefone','endereço', 'password',
     ];
 
     /**

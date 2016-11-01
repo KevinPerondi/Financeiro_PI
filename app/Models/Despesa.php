@@ -16,4 +16,9 @@ class Despesa extends Model implements Transformable
     	'vencimento'
     ];
 
+	/*protected $dates = [
+    	
+    ];
+
+    /*protected $dateFormat = 'd,m,Y';*/
 }

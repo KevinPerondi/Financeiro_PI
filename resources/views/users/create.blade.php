@@ -5,12 +5,19 @@
 <div class="container">
     <h3>Cadastro de Usuario</h3>
     
+    @if($errors->any())
+        <ul class="allert">
+            @foreach($errors->all() as $error)
+                <li>{{$error}}</li>
+            @endforeach
+        </ul>
+    @endif
     
     {!! Form::open(['route'=>'users.store', 'class'=>'form']) !!}
     
     <div class="form-group">
         {!! Form::label('CPF', 'CPF:') !!}
-        {!! Form::text('Cpf',null,['class'=>'form-control']) !!}
+        {!! Form::text('cpf',null,['class'=>'form-control']) !!}
         
         {!! Form::label('Nome', 'Nome:') !!}
         {!! Form::text('name',null,['class'=>'form-control']) !!}   

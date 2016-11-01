@@ -5,7 +5,14 @@
 <div class="container">
     <h3>Cadastro de Despesas</h3>
     
-    
+    @if($errors->any())
+        <ul class="allert">
+            @foreach($errors->all() as $error)
+                <li>{{$error}}</li>
+            @endforeach
+        </ul>
+    @endif
+
     {!! Form::open(['route'=>'despesas.store', 'class'=>'form']) !!}
     
     <div class="form-group">
@@ -24,11 +31,8 @@
         {!! Form::submit('Criar Despesa', ['class'=>'btn btn-primary']) !!}
     </div>
     
-    
-    
     {!! Form::close() !!}
     
 </div>
-    
 
 @endsection

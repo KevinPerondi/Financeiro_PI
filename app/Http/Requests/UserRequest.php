@@ -4,7 +4,7 @@ namespace PI\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class DespesasCategoryRequest extends FormRequest
+class UserRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -24,9 +24,12 @@ class DespesasCategoryRequest extends FormRequest
     public function rules()
     {
         return [
-            'valor' => 'required',
-            'descrição' => 'required',
-            'vencimento' => 'required'
+            'cpf' => 'required|cpf',
+            'name' => 'required|string|between:3,100', 
+            'email' => 'required|email',
+            'telefone' => 'required|alpha_num|between:10,11',
+            'endereço' => 'required|string|between:3,100',
+            'password' => 'required|max:50'
         ];
     }
 }

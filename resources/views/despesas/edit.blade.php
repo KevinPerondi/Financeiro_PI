@@ -3,8 +3,15 @@
 @section('content')
 
 <div class="container">
-    <h3>Cadastro de Despesas</h3>
+    <h3>Edição de Despesas</h3>
 
+    @if($errors->any())
+        <ul class="allert">
+            @foreach($errors->all() as $error)
+                <li>{{$error}}</li>
+            @endforeach
+        </ul>
+    @endif
 
     {!! Form::model($despesa,['route'=>['despesas.update', $despesa->id]]) !!}
     
