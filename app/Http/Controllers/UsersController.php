@@ -3,8 +3,10 @@
 namespace PI\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use Illuminate\Support\Facades\DB;
 use PI\Http\Requests;
+use Illuminate\Support\Facades\Redirect;
+use Illuminate\Support\Facades\Session;
 
 class UsersController extends Controller
 {
@@ -26,23 +28,16 @@ class UsersController extends Controller
     
     public function store (Requests\UserRequest $request){
         $data = $request->all();
-        $this->repository->create($data);
-        $request->session()->flash('alert-success','Usuário criado com sucesso.');
-        return redirect()->route('users.home');
 
-        /*$result = DB::tables('users')->where('cpf','=',$data->cpf);
+        $result = DB::table('users')->where('cpf','=',$request->cpf);
         if (is_null($result)){
             $this->repository->create($data);
             $request->session()->flash('alert-success','Usuário criado com sucesso.');
             return redirect()->route('users.home');
         }
         else{
-        //$this->repository->create($data);
-        $request->session()->flash('alert-success','CPF já existente.');
+        return Redirect::back()->with($request->session()->flash('alert-danger','CPF já existente.'));
         }
-
-        return redirect()->route('users.home');*/
-           
     }
 
     public function edit($id){
@@ -53,10 +48,16 @@ class UsersController extends Controller
 
     public function update(Requests\UserRequest $request, $id){
         $data = $request->all();
-        $this->repository->update($data,$id);
-        $request->session()->flash('alert-success','Usuário modificado com sucesso.');
-        return redirect()->route('users.home');
 
+        $result = DB::table('users')->where('cpf','=',$request->cpf);
+        if (is_null($result)){
+            $this->repository->update($data,$id);
+            $request->session()->flash('alert-success','Usuário modificado com sucesso.');
+            return redirect()->route('users.home');
+        }
+        else{
+        return Redirect::back()->with($request->session()->flash('alert-danger','CPF já existente.'));
+        }        
     }
 
     public function remove(\Symfony\Component\HttpFoundation\Request $request, $id){
