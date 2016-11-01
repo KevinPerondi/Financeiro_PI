@@ -29,7 +29,7 @@ class UsersController extends Controller
     public function store (Requests\UserRequest $request){
         $data = $request->all();
 
-        $result = DB::table('users')->where('cpf','=',$request->cpf);
+        $result = DB::table('users')->where('cpf','=',$request->cpf)->first();
         if (is_null($result)){
             $this->repository->create($data);
             $request->session()->flash('alert-success','Usuário criado com sucesso.');
@@ -49,7 +49,7 @@ class UsersController extends Controller
     public function update(Requests\UserRequest $request, $id){
         $data = $request->all();
 
-        $result = DB::table('users')->where('cpf','=',$request->cpf);
+        $result = DB::table('users')->where('cpf','=',$request->cpf)->first();
         if (is_null($result)){
             $this->repository->update($data,$id);
             $request->session()->flash('alert-success','Usuário modificado com sucesso.');
