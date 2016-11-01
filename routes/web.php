@@ -34,10 +34,3 @@ Route::get('/despesas/edit/{id}',['as' => 'despesas.edit', 'uses' =>'DespesasCon
 Route::get('/despesas/remove/{id}',['as' => 'despesas.remove', 'uses' =>'DespesasController@remove']);
 Route::post('/despesas/update/{id}',['as' => 'despesas.update', 'uses' =>'DespesasController@update']);
 Route::post('/despesas/store',['as' => 'despesas.store', 'uses' =>'DespesasController@store']);
-
-Route::get('/doacoes', ['as'=> 'doações.home','uses'=>'DoaçõesController@index']);
-Route::get('/doacoes/create',['as' => 'doações.create', 'uses' =>'DoaçõesController@create']);
-Route::get('/doacoes/edit/{id}',['as' => 'doações.edit', 'uses' =>'DoaçõesController@edit']);
-Route::get('/doacoes/remove/{id}',['as' => 'doações.remove', 'uses' =>'DoaçõesController@remove']);
-Route::post('/doacoes/update/{id}',['as' => 'doações.update', 'uses' =>'DoaçõesController@update']);
-Route::post('/doacoes/store',['as' => 'doações.store', 'uses' =>'DoaçõesController@store']);
