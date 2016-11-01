@@ -2,7 +2,7 @@
 
 use Illuminate\Database\Seeder;
 
-class DoaçãoTableSeeder extends Seeder
+class DoacaoTableSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -11,7 +11,6 @@ class DoaçãoTableSeeder extends Seeder
      */
     public function run()
     {
-    	factory(\PI\Models\Doação::class, 10)->create();
-        //
+        factory(\PI\Models\Doacao::class, 10)->create();
     }
 }

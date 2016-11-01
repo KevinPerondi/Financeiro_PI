@@ -13,7 +13,7 @@ class DoacaoRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**

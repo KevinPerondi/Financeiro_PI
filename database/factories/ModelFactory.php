@@ -36,5 +36,12 @@ $factory->define(PI\Models\Despesa::class, function (Faker\Generator $faker) {
     ];
 });
 
-
+$factory->define(PI\Models\Doacao::class, function (Faker\Generator $faker){
+    return [
+        'valor' => $faker->randomFloat,
+        'donatario' => $faker->name,
+        'data' => $faker->date('d/m/Y'),
+       
+    ];
+});
 
