@@ -3,8 +3,8 @@
 @section('content')
 
 <div class="container">
-    <h3>Edição de Despesas</h3>
-
+    <h3>Cadastro de Despesas</h3>
+    
     @if($errors->any())
         <ul class="allert">
             @foreach($errors->all() as $error)
@@ -13,7 +13,7 @@
         </ul>
     @endif
 
-    {!! Form::model($despesa,['route'=>['despesas.update', $despesa->id]]) !!}
+    {!! Form::open(['route'=>'despesas.store', 'class'=>'form']) !!}
     
     <div class="form-group">
         {!! Form::label('Valor', 'Valor:') !!}
@@ -28,14 +28,11 @@
     </div>
     
     <div class="form-group">
-        {!! Form::submit('Editar Despesa', ['class'=>'btn btn-primary']) !!}
+        {!! Form::submit('Criar Despesa', ['class'=>'btn btn-primary']) !!}
     </div>
-    
-    
     
     {!! Form::close() !!}
     
 </div>
-    
 
 @endsection

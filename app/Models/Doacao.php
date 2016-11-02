@@ -11,14 +11,6 @@ class Doacao extends Model implements Transformable
     use TransformableTrait;
 
     protected $fillable = [
-    	'valor',
-    	'donatario',
-    	'data'
-    ];
+    'valor','donatario','data'];
 
-	/*protected $dates = [
-    	
-    ];
-
-    /*protected $dateFormat = 'd,m,Y';*/
 }

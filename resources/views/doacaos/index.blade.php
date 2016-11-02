@@ -13,9 +13,9 @@
 
 
 <div class="container">
-    <h3>Despesas</h3>
+    <h3>Doações</h3>
     
-    <a href="{{route('doacaos.create')}}" class="btn btn-default">Nova Despesa</a>
+    <a href="{{route('doacaos.create')}}" class="btn btn-default">Nova Doação</a>
     <br><br>    
     <table class="table table-bordered">
         <thead>
@@ -31,8 +31,8 @@
              @foreach($doacaos as $doacao)
             <tr>
                  <td>{{$doacao->valor}}</td>
-                <td>{{$doacao->descrição}}</td>
-                <td>{{$doacao->vencimento}}</td>
+                <td>{{$doacao->donatario}}</td>
+                <td>{{$doacao->data}}</td>
                 <td><a href="{{route('doacaos.edit',['id'=>$doacao->id])}}" class="btn btn-default btn-sm">
                         Editar
                     </a>
