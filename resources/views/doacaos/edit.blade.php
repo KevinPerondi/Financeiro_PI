@@ -3,7 +3,7 @@
 @section('content')
 
 <div class="container">
-    <h3>Edição de Despesas</h3>
+    <h3>Edição de Doações</h3>
 
     @if($errors->any())
         <ul class="allert">
@@ -28,7 +28,7 @@
     </div>
     
     <div class="form-group">
-        {!! Form::submit('Editar Despesa', ['class'=>'btn btn-primary']) !!}
+        {!! Form::submit('Editar Doação', ['class'=>'btn btn-primary']) !!}
     </div>
     
     

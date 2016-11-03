@@ -25,7 +25,7 @@ class DoacaosController extends Controller
     public function store (Requests\DoacaoRequest $request){
         $data = $request->all();
         $this->repository->create($data);
-        $request->session()->flash('alert-success','Doacao criada com sucesso.');
+        $request->session()->flash('alert-success','Doação criada com sucesso.');
         return redirect()->route('doacaos.home');
         
     }
@@ -39,7 +39,7 @@ class DoacaosController extends Controller
     public function update(Requests\DoacaoRequest $request, $id){
         $data = $request->all();
         $this->repository->update($data,$id);
-        $request->session()->flash('alert-success','Doacao editada com sucesso.');
+        $request->session()->flash('alert-success','Doação editada com sucesso.');
         return redirect()->route('doacaos.home');
 
     }
@@ -47,7 +47,7 @@ class DoacaosController extends Controller
     public function remove(\Symfony\Component\HttpFoundation\Request $request, $id){
         $data = $request->all();
         $this->repository->delete($id);
-        $request->session()->flash('alert-success','Doacao removida com sucesso.');
+        $request->session()->flash('alert-success','Doação removida com sucesso.');
         return redirect()->route('doacaos.home');
 
     }

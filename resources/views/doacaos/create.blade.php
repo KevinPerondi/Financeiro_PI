@@ -3,7 +3,7 @@
 @section('content')
 
 <div class="container">
-    <h3>Cadastro de Despesas</h3>
+    <h3>Cadastro de Doações</h3>
     
     @if($errors->any())
         <ul class="allert">
@@ -13,22 +13,22 @@
         </ul>
     @endif
 
-    {!! Form::open(['route'=>'despesas.store', 'class'=>'form']) !!}
+    {!! Form::open(['route'=>'doacaos.store', 'class'=>'form']) !!}
     
     <div class="form-group">
         {!! Form::label('Valor', 'Valor:') !!}
         {!! Form::text('valor',null,['class'=>'form-control']) !!}
         
-        {!! Form::label('Descrição', 'Descrição:') !!}
-        {!! Form::text('descrição',null,['class'=>'form-control']) !!}   
+        {!! Form::label('Donatário', 'Donatário:') !!}
+        {!! Form::text('donatario',null,['class'=>'form-control']) !!}   
         
-        {!! Form::label('Vencimento', 'Vencimento:') !!}
-        {!! Form::text('vencimento',null,['class'=>'form-control']) !!}          
+        {!! Form::label('Data', 'Data:') !!}
+        {!! Form::text('data',null,['class'=>'form-control']) !!}          
         
     </div>
     
     <div class="form-group">
-        {!! Form::submit('Criar Despesa', ['class'=>'btn btn-primary']) !!}
+        {!! Form::submit('Criar Doação', ['class'=>'btn btn-primary']) !!}
     </div>
     
     {!! Form::close() !!}
