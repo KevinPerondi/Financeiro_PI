@@ -11,6 +11,10 @@ class Mensalidade extends Model implements Transformable
     use TransformableTrait;
 
     protected $fillable = [
-    'id_membro','valor','vencimento','status',];
+    'user_id','valor','vencimento','status',];
+
+public function user (){
+	return $this->belongsTo(User::class);
+}
 
 }

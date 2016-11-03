@@ -15,8 +15,8 @@ class CreateMensalidadesTable extends Migration
     {
         Schema::create('mensalidades', function(Blueprint $table) {
             $table->increments('id');
-            $table->integer('id_membro')->unsigned();
-            $table->foreign('id_membro')->references('id')->on('users');
+            $table->integer('user_id')->unsigned();
+            $table->foreign('user_id')->references('id')->on('users');
             $table->float('valor');
             $table->string('vencimento');
             $table->string('status');
