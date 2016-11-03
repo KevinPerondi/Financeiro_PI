@@ -12,10 +12,10 @@ class MensalidadesController extends Controller
         $this->repository =$repository;
     }
 
-    public function user($id){
+    public function user($id_membro){
 
     	$mensalidade = $this->repository->find($id_membro);
-    	 return view ('mensalidade.user',compact('mensalidade'));
+    	return view ('mensalidade.user',compact('mensalidade'));
     }
 
 }

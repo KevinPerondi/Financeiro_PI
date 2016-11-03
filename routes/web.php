@@ -44,4 +44,4 @@ Route::post('/doacoes/update/{id}',['as' => 'doacaos.update', 'uses' =>'DoacaosC
 Route::post('/doacoes/store',['as' => 'doacaos.store', 'uses' =>'DoacaosController@store']);
 
 
-Route::get('/mensalidades/user/{id}', ['as'=> 'mensalidades.user','uses'=>'MensalidadesController@user']);
+Route::get('/mensalidades/user/{id_membro}', ['as'=> 'mensalidades.user','uses'=>'MensalidadesController@user']);

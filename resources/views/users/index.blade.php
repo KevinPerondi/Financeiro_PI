@@ -44,7 +44,7 @@
                     <a href="{{route('users.remove',['id'=>$user->id])}}" class="btn btn-default btn-sm">
                         Remover
                     </a>
-                    <a href="{{route('mensalidades.user',['id'=>$user->id])}}" class="btn btn-default btn-sm">
+                    <a href="{{route('mensalidades.user',['id_membro'=>$user->id])}}" class="btn btn-default btn-sm">
                         Mensalidades
                     </a>
 
