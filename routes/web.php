@@ -42,3 +42,6 @@ Route::get('/doacoes/edit/{id}',['as' => 'doacaos.edit', 'uses' =>'DoacaosContro
 Route::get('/doacoes/remove/{id}',['as' => 'doacaos.remove', 'uses' =>'DoacaosController@remove']);
 Route::post('/doacoes/update/{id}',['as' => 'doacaos.update', 'uses' =>'DoacaosController@update']);
 Route::post('/doacoes/store',['as' => 'doacaos.store', 'uses' =>'DoacaosController@store']);
+
+
+Route::get('/mensalidades/user/{id}', ['as'=> 'mensalidades.user','uses'=>'MensalidadesController@user']);
