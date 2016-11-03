@@ -13,32 +13,23 @@
 
 
 <div class="container">
-    <h3>Doações</h3>
-    
-    <a href="{{route('doacaos.create')}}" class="btn btn-default">Nova Doação</a>
-    <br><br>    
+    <h3>Mensalidades</h3>
+  
     <table class="table table-bordered">
         <thead>
             <tr>
                 <th>Valor</th>
                 <th>Donatário</th>
                 <th>Data</th>
-                <th>Ação</th>
             </tr>
             
         </thead>
         <tbody>
-             @foreach($doacaos as $doacao)
+             @foreach($mensalidades as $mensalidade)
             <tr>
-                 <td>{{$doacao->valor}}</td>
-                <td>{{$doacao->donatario}}</td>
-                <td>{{$doacao->data}}</td>
-                <td><a href="{{route('doacaos.edit',['id'=>$doacao->id])}}" class="btn btn-default btn-sm">
-                        Editar
-                    </a>
-                    <a href="{{route('doacaos.remove',['id'=>$doacao->id])}}" class="btn btn-default btn-sm">
-                        Remover
-                    </a>
+                <td>{{$mensalidade->valor}}</td>
+                <td>{{$mensalidade->vencimento}}</td>
+                <td>{{$mensalidade->status}}</td>
                 </td>
 
             </tr>
@@ -50,7 +41,7 @@
         
     </table>
     
-    {!! $doacaos->render() !!}
+    {!! $mensalidades->render() !!}
 </div>
     
 
