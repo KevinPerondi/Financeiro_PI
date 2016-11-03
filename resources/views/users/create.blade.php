@@ -22,7 +22,7 @@
         </ul>
     @endif
     
-    {!! Form::open(['route'=>'users.store', 'class'=>'form']) !!}
+    {!! Form::open(['route'=>'admin.store', 'class'=>'form']) !!}
     
     <div class="form-group">
         {!! Form::label('CPF', 'CPF:') !!}

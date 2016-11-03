@@ -14,7 +14,7 @@
 <div class="container">
     <h3>Usuarios</h3>
     
-    <a href="{{route('users.create')}}" class="btn btn-default">Novo Usuario</a>
+    <a href="{{route('admin.create')}}" class="btn btn-default">Novo Usuario</a>
     <br> <br>   
     <table class="table table-bordered">
         <thead>
@@ -38,10 +38,10 @@
                 <td>{{$user->telefone}}</td>
                 <td>{{$user->endereço}}</td>
                 <td>
-                    <a href="{{route('users.edit',['id'=>$user->id])}}" class="btn btn-default btn-sm">
+                    <a href="{{route('admin.edit',['id'=>$user->id])}}" class="btn btn-default btn-sm">
                         Editar
                     </a>
-                    <a href="{{route('users.remove',['id'=>$user->id])}}" class="btn btn-default btn-sm">
+                    <a href="{{route('admin.remove',['id'=>$user->id])}}" class="btn btn-default btn-sm">
                         Remover
                     </a>
 

@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Database\Seeder;
+use PI\Models\User;
 
 class UserTableSeeder extends Seeder
 {
@@ -10,8 +11,15 @@ class UserTableSeeder extends Seeder
      * @return void
      */
     public function run()
-    {
-    	factory(\PI\Models\User::class, 10)->create();
-        //
-    }
+{
+
+    DB::table('users')->delete();
+    User::create(array(
+        'name'     => 'Chris Sevilleja',
+        'username' => 'sevilayha',
+        'email'    => 'chris@scotch.io',
+        'password' => Hash::make('awesome'),
+
+    ));
+}
 }

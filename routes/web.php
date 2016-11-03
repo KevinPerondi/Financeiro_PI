@@ -20,13 +20,20 @@ Auth::routes();
 Route::get('/', function (){
     return view('home');
     
+});Route::group(['prefix' => 'admin','middleware' => 'auth.checkrole', 'as' => 'admin.'], function(){
+
+
+Route::get('users', ['as'=> 'home','uses'=>'UsersController@index']);
+Route::get('create',['as' => 'create', 'uses' =>'UsersController@create']);
+Route::get('edit/{id}',['as' => 'edit', 'uses' =>'UsersController@edit']);
+Route::get('remove/{id}',['as' => 'remove', 'uses' =>'UsersController@remove']);
+Route::post('update/{id}',['as' => 'update', 'uses' =>'UsersController@update']);
+Route::post('store',['as' => 'store', 'uses' =>'UsersController@store']);
+
+
+
 });
-Route::get('/users', ['as'=> 'users.home','uses'=>'UsersController@index']);
-Route::get('/users/create',['as' => 'users.create', 'uses' =>'UsersController@create']);
-Route::get('/users/edit/{id}',['as' => 'users.edit', 'uses' =>'UsersController@edit']);
-Route::get('/users/remove/{id}',['as' => 'users.remove', 'uses' =>'UsersController@remove']);
-Route::post('/users/update/{id}',['as' => 'users.update', 'uses' =>'UsersController@update']);
-Route::post('/users/store',['as' => 'users.store', 'uses' =>'UsersController@store']);
+
 
 Route::get('/despesas', ['as'=> 'despesas.home','uses'=>'DespesasController@index']);
 Route::get('/despesas/create',['as' => 'despesas.create', 'uses' =>'DespesasController@create']);
