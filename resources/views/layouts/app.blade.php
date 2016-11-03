@@ -43,6 +43,7 @@
                 <ul class="nav navbar-nav">
                     <li><a href="{{ route('users.home') }}">Usuarios</a></li>
                     <li><a href="{{ route('despesas.home') }}">Despesas</a></li>
+                    <li><a href="{{ route('doacaos.home') }}">Doações</a></li>
                 </ul>
                 
                 <!-- Right Side Of Navbar -->
