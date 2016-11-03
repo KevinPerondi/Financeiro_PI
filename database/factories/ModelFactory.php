@@ -45,3 +45,11 @@ $factory->define(PI\Models\Doacao::class, function (Faker\Generator $faker){
     ];
 });
 
+$factory->define(PI\Models\Mensalidade::class, function (Faker\Generator $faker){
+    return [
+        'valor' => $faker->randomFloat,
+        'status' => $faker->name,
+        'vencimento' => $faker->date('d/m/Y'),
+       
+    ];
+});
