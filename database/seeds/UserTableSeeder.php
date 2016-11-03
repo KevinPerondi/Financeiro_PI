@@ -13,7 +13,7 @@ class UserTableSeeder extends Seeder
     {
     	factory(\PI\Models\User::class, 10)->create()->each(function ($c){
             for ($i = 0; $i<5; $i++){
-                $c->mensalidades()->save(factory(\PI\Models\Mensalidade::class)->make());
+                $c->users()->save(factory(\PI\Models\Mensalidade::class)->make());
             }
 
         });
