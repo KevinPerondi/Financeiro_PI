@@ -10,10 +10,13 @@
       @endif
     @endforeach
   </div> <!-- end .flash-message -->  
+    
 
 
 <div class="container">
     <h3>Mensalidades</h3>
+        <a href="{{route('mensalidades.create')}}" class="btn btn-default">Nova Mensalidade</a>
+    <br> <br>   
   
     <table class="table table-bordered">
         <thead>

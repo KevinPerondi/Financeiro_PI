@@ -13,7 +13,7 @@ class Kernel extends ConsoleKernel
      * @var array
      */
     protected $commands = [
-        //
+        '\PI\Console\Commands\MensalidadeInsert'
     ];
 
     /**
@@ -26,6 +26,8 @@ class Kernel extends ConsoleKernel
     {
         // $schedule->command('inspire')
         //          ->hourly();
+        $schedule->call('PI\Http\Controllers\MensalidadesController@insert')
+                ->everyMinute();
     }
 
     /**
