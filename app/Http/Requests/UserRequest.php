@@ -25,7 +25,7 @@ class UserRequest extends FormRequest
     {
         return [
             'cpf' => 'required|cpf',
-            'name' => 'required|string|between:3,100', 
+            'name' => 'required|alpha|between:3,100', 
             'email' => 'required|email',
             'telefone' => 'required|alpha_num|between:10,11',
             'endereço' => 'required|string|between:3,100',
