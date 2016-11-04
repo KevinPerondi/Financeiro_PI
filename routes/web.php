@@ -45,7 +45,9 @@ Route::post('/doacoes/store',['as' => 'doacaos.store', 'uses' =>'DoacaosControll
 
 
 Route::get('/mensalidades/user/{user_id}', ['as'=> 'mensalidades.user','uses'=>'MensalidadesController@user']);
-//Route::get('/mensalidades/user/edit/{id}', ['as'=> 'mensalidades.edit','uses'=>'MensalidadesController@edit']);
+Route::post('/mensalidades/store',['as' => 'mensalidades.store', 'uses' =>'mensalidadesController@store']);
+
+Route::get('/mensalidades/user/edit/{id}', ['as'=> 'mensalidades.edit','uses'=>'MensalidadesController@edit']);
 //Route::get('/mensalidades/geral', ['as'=> 'mensalidades.geral','uses'=>'MensalidadesController@geral']);
 Route::get('/mensalidades/create', ['as'=> 'mensalidades.create','uses'=>'MensalidadesController@create']);
 Route::get('/mensalidades/insert', ['as'=> 'mensalidades.insert','uses'=>'MensalidadesController@insert']);

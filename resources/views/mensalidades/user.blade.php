@@ -14,18 +14,16 @@
 
 
 <div class="container">
-    <h3>Mensalidades</h3>
-        <a href="{{route('mensalidades.create')}}" class="btn btn-default">Nova Mensalidade</a>
-    <br> <br>   
+    <h3>Mensalidades</h3> 
   
     <table class="table table-bordered">
         <thead>
             <tr>
                 <th>Valor</th>
-                <th>Donatário</th>
-                <th>Data</th>
-            </tr>
-            
+                <th>Vencimento</th>
+                <th>Situação</th>
+                <th>Pagar</th>
+            </tr>         
         </thead>
         <tbody>
              @foreach($mensalidades as $mensalidade)
@@ -33,18 +31,24 @@
                 <td>{{$mensalidade->valor}}</td>
                 <td>{{$mensalidade->vencimento}}</td>
                 <td>{{$mensalidade->status}}</td>
-                </td>
+                <td>
+                 <a href="{{route('mensalidades.edit',['id'=>$mensalidade->id])}}" class="btn btn-default btn-sm">
+                        Pago
+                    </a>
 
             </tr>
-                @endforeach    
+                @endforeach 
+ 
             
-        </tbody>
-            
-        
-        
+        </tbody>        
     </table>
-    
-    {!! $mensalidades->render() !!}
+    <table class="table table-bordered">
+                    <td>Saldo</td>
+
+                <td align="right">R${{$saldo}}</td>  
+                
+        </table>
+
 </div>
     
 

@@ -22,7 +22,7 @@
         </ul>
     @endif
     
-    {!! Form::open(['route'=>'users.store', 'class'=>'form']) !!}
+    {!! Form::open(['route'=>'mensalidade.store', 'class'=>'form']) !!}
     
     <div class="form-group">
         {!! Form::label('Valor', 'Valor:') !!}
@@ -37,7 +37,7 @@
     </div>
     
     <div class="form-group">
-        {!! Form::submit('Criar Usuario', ['class'=>'btn btn-primary']) !!}
+        {!! Form::submit('Criar Mensalidade', ['class'=>'btn btn-primary']) !!}
     </div>
     
     
