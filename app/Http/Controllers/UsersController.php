@@ -48,16 +48,16 @@ class UsersController extends Controller
 
     public function update(Requests\UserRequest $request, $id){
         $data = $request->all();
+        $result = DB::table('users')->where('id','=',$id)->first();
 
-        $result = DB::table('users')->where('cpf','=',$request->cpf)->first();
-        if (is_null($result)){
+        if ($request->cpf != $result->cpf){
+            return Redirect::back()->with($request->session()->flash('alert-danger','O campo CPF foi alterado'));    
+        }
+        else{
             $this->repository->update($data,$id);
             $request->session()->flash('alert-success','Usuário modificado com sucesso.');
             return redirect()->route('users.home');
         }
-        else{
-        return Redirect::back()->with($request->session()->flash('alert-danger','CPF já existente.'));
-        }        
     }
 
     public function remove(\Symfony\Component\HttpFoundation\Request $request, $id){
