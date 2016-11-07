@@ -9,7 +9,7 @@ use PI\Http\Requests;
 use Carbon\Carbon;
 
 class MensalidadesController extends Controller
-{   public $preçoMensalidade=100;
+{ 
     
     public function __construct(\PI\Repositories\MensalidadeRepositoryEloquent $repository) {
         $this->repository =$repository;
@@ -34,10 +34,9 @@ class MensalidadesController extends Controller
 
     public function insert(){
        $users = DB::table('users')->get();
-       $preçoMensalidade=$preçoMensalidade+1;
         foreach ($users as $user) {
             DB::table('mensalidades')->insertGetId(
-            ['valor'=>$preçoMensalidade, 'user_id' => $user->id,'vencimento'=>Carbon::now()->format('d/m/Y'),'status'=>'Pendente']);
+            ['valor'=>100, 'user_id' => $user->id,'vencimento'=>Carbon::now()->format('d/m/Y'),'status'=>'Pendente']);
        }
     }
 
