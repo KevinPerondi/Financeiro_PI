@@ -15,7 +15,7 @@ $factory->define(PI\Models\User::class, function (Faker\Generator $faker) {
     static $password;
 
     return [
-    	'Cpf' => mt_rand(10000000000,99999999999),
+    	'cpf' => mt_rand(10000000000,99999999999),
         'name' => $faker->name,
         'telefone' => $faker->phoneNumber,
         'endereço' => $faker->streetAddress,
