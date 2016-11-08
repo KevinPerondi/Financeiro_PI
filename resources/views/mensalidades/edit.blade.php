@@ -43,7 +43,7 @@
                 <td>{{$mensalidade->valor}}</td>
                 <td>{{$mensalidade->vencimento}}</td>
                 <td>
-                    <a href="{{route('mensalidades.pagar',['id'=>$mensalidade->id])}}" class="btn btn-default btn-sm">
+                    <a href="{{route('mensalidades.delete',['vencimento'=>$mensalidade->vencimento])}}" class="btn btn-default btn-sm">
                         Remover Mensalidade
                     </a>
 
