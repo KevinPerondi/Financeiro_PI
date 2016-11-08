@@ -36,15 +36,17 @@ class MensalidadesController extends Controller
        }
     }
 
-    public function delete(\Symfony\Component\HttpFoundation\Request $request, $mes){
-        /*DB::table('mensalidades')->delete()->where('vencimento','=',$data);
-            Session::flash('alert-success','Mensalidade removida sucesso.');
-            return redirect()->back();*/
+    public function delete(\Symfony\Component\HttpFoundation\Request $request, $vencimento){
+        //$mes = $request->vencimento;
+        DB::table('mensalidades')->delete()->where('vencimento','=',$vencimento);
+        Session::flash('alert-success','Mensalidade removida sucesso.');
+        return redirect()->route('admin.mensalidades.edit');  
+//            return redirect()->back();
 
-        $data = $request->all();
+        /*$data = $request->all();
         $this->repository->delete($mes);
         $request->session()->flash('alert-success','Mensalidade removida sucesso.');
-        return redirect()->route('mensalidades.edit');            
+        return redirect()->route('mensalidades.edit'); */           
     }
 
     public function pagar($id){
@@ -58,17 +60,19 @@ class MensalidadesController extends Controller
 
     public function edit(){
        $mensalidades = DB::table('mensalidades')->where('user_id','=',1)->get();
-       
-        return view('mensalidades.edit', compact('mensalidades'))->with('valor',$this->valor);
+       $valor = DB::table('valores')->select('valor')->where('id','=',1)->get();
+
+        return view('mensalidades.edit', compact('mensalidades'))->with('valor',$valor[0]->valor);
     }
 
     public function update(\Symfony\Component\HttpFoundation\Request $request){
         //dd($this->valor);
-        $this->valor = $request->valor;
+        $valor=$request->valor;
+        DB::update('update valores set valor = ?', [$valor]);
         //dd($request->valor);
         //dd($this->valor);
         Session::flash('alert-success','Mensalidade alterada com sucesso.');
-        return redirect()->route('mensalidades.edit');
+        return redirect()->route('admin.mensalidades.edit');
 
     }
 
