@@ -40,7 +40,7 @@ class MensalidadesController extends Controller
         //$mes = $request->vencimento;
         DB::table('mensalidades')->delete()->where('vencimento','=',$vencimento);
         Session::flash('alert-success','Mensalidade removida sucesso.');
-        return redirect()->route('mensalidades.edit');  
+        return redirect()->route('admin.mensalidades.edit');  
 //            return redirect()->back();
 
         /*$data = $request->all();
@@ -72,7 +72,7 @@ class MensalidadesController extends Controller
         //dd($request->valor);
         //dd($this->valor);
         Session::flash('alert-success','Mensalidade alterada com sucesso.');
-        return redirect()->route('mensalidades.edit');
+        return redirect()->route('admin.mensalidades.edit');
 
     }
 
