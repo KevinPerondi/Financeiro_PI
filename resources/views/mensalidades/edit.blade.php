@@ -3,7 +3,7 @@
 @section('content')
 
 <div class="container">
-    <h3>Edição de Doação: {{$doacao->donatario}}</h3>
+    <h3>Editar Mensalidades:</h3>
 
     @if($errors->any())
         <ul class="allert">
@@ -13,26 +13,17 @@
         </ul>
     @endif
 
-    {!! Form::model($doacao,['route'=>['doacaos.update', $doacao->id]]) !!}
+    {!! Form::model(['route'=>['mensalidades.update']]) !!}
     
     <div class="form-group">
         {!! Form::label('Valor', 'Valor:') !!}
-        {!! Form::text('valor',null,['class'=>'form-control']) !!}
-        
-        {!! Form::label('Donatário', 'Donatário:') !!}
-        {!! Form::text('donatario',null,['class'=>'form-control']) !!}   
-        
-        {!! Form::label('Data', 'Data:') !!}
-        {!! Form::text('data',null,['class'=>'form-control']) !!}          
-        
+        {!! Form::text('valor',null,['class'=>'form-control']) !!}        
     </div>
     
     <div class="form-group">
-        {!! Form::submit('Editar Doação', ['class'=>'btn btn-primary']) !!}
+        {!! Form::submit('Editar Mensalidades', ['class'=>'btn btn-primary']) !!}
     </div>
-    
-    
-    
+
     {!! Form::close() !!}
     
 </div>
