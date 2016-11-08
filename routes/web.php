@@ -51,7 +51,7 @@ Route::post('doacoes/store',['as' => 'doacaos.store', 'uses' =>'DoacaosControlle
 
 
 
-});
+
 
 Route::get('mensalidades/user/{user_id}', ['as'=> 'mensalidades.user','uses'=>'MensalidadesController@user']);
 Route::get('mensalidades/user/pagar/{id}', ['as'=> 'mensalidades.pagar','uses'=>'MensalidadesController@pagar']);
@@ -60,3 +60,4 @@ Route::get('mensalidades/insert', ['as'=> 'mensalidades.insert','uses'=>'Mensali
 Route::get('mensalidades/edit', ['as'=> 'mensalidades.edit','uses'=>'MensalidadesController@edit']);
 Route::post('mensalidades/store',['as' => 'mensalidades.store', 'uses' =>'mensalidadesController@store']);
 Route::post('mensalidades/update', ['as'=> 'mensalidades.update','uses'=>'MensalidadesController@update']);
+});

@@ -13,7 +13,7 @@
             <br><br>
             <a href="{{route('admin.doacaos.index')}}" class="btn btn-default" style="height:40px; width:200px">Doações</a>
             <br><br>
-            <a href="{{route('mensalidades.user')}}" class="btn btn-default" style="height:40px; width:200px">Mensalidades</a>            
+            <a href="{{route('admin.mensalidades.edit')}}" class="btn btn-default" style="height:40px; width:200px">Mensalidades</a>            
         </div>
     </div>
 </div>

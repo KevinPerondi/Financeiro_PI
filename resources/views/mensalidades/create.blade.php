@@ -22,7 +22,7 @@
         </ul>
     @endif
     
-    {!! Form::open(['route'=>'mensalidade.store', 'class'=>'form']) !!}
+    {!! Form::open(['route'=>'admin.mensalidade.store', 'class'=>'form']) !!}
     
     <div class="form-group">
         {!! Form::label('Valor', 'Valor:') !!}
