@@ -58,13 +58,15 @@ class MensalidadesController extends Controller
 
     public function edit(){
        $mensalidades = DB::table('mensalidades')->where('user_id','=',1)->get();
-       
-        return view('mensalidades.edit', compact('mensalidades'))->with('valor',$this->valor);
+       $valor = DB::table('valores')->select('valor')->where('id','=',1)->get();
+
+        return view('mensalidades.edit', compact('mensalidades'))->with('valor',$valor[0]->valor);
     }
 
     public function update(\Symfony\Component\HttpFoundation\Request $request){
         //dd($this->valor);
-        $this->valor = $request->valor;
+        $valor=$request->valor;
+        DB::update('update valores set valor = ?', [$valor]);
         //dd($request->valor);
         //dd($this->valor);
         Session::flash('alert-success','Mensalidade alterada com sucesso.');
