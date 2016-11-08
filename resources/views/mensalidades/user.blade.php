@@ -32,7 +32,7 @@
                 <td>{{$mensalidade->vencimento}}</td>
                 <td>{{$mensalidade->status}}</td>
                 <td>
-                 <a href="{{route('mensalidades.edit',['id'=>$mensalidade->id])}}" class="btn btn-default btn-sm">
+                 <a href="{{route('mensalidades.pagar',['id'=>$mensalidade->id])}}" class="btn btn-default btn-sm">
                         Pago
                     </a>
 

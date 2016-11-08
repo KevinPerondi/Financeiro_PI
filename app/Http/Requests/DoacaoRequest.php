@@ -25,7 +25,7 @@ class DoacaoRequest extends FormRequest
     {
         return [
             'valor' => 'required|numeric',
-            'donatario' => 'required||string|between:3,100',
+            'donatario' => 'required|string|between:3,100',
             'data' => 'required|date_format:"d/m/Y"'
         ];
     }
