@@ -10,7 +10,7 @@ use Carbon\Carbon;
 
 class MensalidadesController extends Controller
 { 
-    private $valor = 10;
+    public $valor = 15;
     
     public function __construct(\PI\Repositories\MensalidadeRepositoryEloquent $repository) {
         $this->repository =$repository;
@@ -32,7 +32,7 @@ class MensalidadesController extends Controller
        $users = DB::table('users')->get();
         foreach ($users as $user) {
             DB::table('mensalidades')->insertGetId(
-            ['valor'=>$this->valor, 'user_id' => $user->id,'vencimento'=>Carbon::now()->format('d/m/Y'),'status'=>'Pendente']);
+            ['valor'=>$this->valor, 'user_id' => $user->id,'vencimento'=>Carbon::now()->startOfMonth()->addMonths(1)->addDays(4)->format('d/m/Y'),'status'=>'Pendente']);
        }
     }
 
@@ -46,13 +46,18 @@ class MensalidadesController extends Controller
     }
 
     public function edit(){
-        return view ('mensalidades.edit');
+       $mensalidades = DB::table('mensalidades')->where('user_id','=',1)->get();
+       
+        return view('mensalidades.edit', compact('mensalidades'))->with('valor',$this->valor);
     }
 
-    public function update(Requests\DespesasRequest $request, $valorNovo){
-        $this->valor = $valorNovo;
-        $request->session()->flash('alert-success','Mensalidade alterada com sucesso.');
-        return redirect()->route('home');
+    public function update(\Symfony\Component\HttpFoundation\Request $request){
+        //dd($this->valor);
+        $this->valor = $request->valor;
+        //dd($request->valor);
+        //dd($this->valor);
+        Session::flash('alert-success','Mensalidade alterada com sucesso.');
+        return redirect()->route('mensalidades.edit');
 
     }
 

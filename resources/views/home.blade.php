@@ -6,7 +6,7 @@
         <div class="col-md-8 col-md-offset-2">
 
 
-            <a href="{{route('admin.home')}}" class="btn btn-default" style="height:40px; width:200px">Usuarios</a>
+            <a href="{{route('admin.users')}}" class="btn btn-default" style="height:40px; width:200px">Usuarios</a>
 
             <br><br>
             <a href="{{route('despesas.home')}}" class="btn btn-default" style="height:40px; width:200px">Despesas</a>
