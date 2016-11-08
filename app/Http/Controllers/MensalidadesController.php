@@ -36,15 +36,17 @@ class MensalidadesController extends Controller
        }
     }
 
-    public function delete(\Symfony\Component\HttpFoundation\Request $request, $mes){
-        /*DB::table('mensalidades')->delete()->where('vencimento','=',$data);
-            Session::flash('alert-success','Mensalidade removida sucesso.');
-            return redirect()->back();*/
+    public function delete(\Symfony\Component\HttpFoundation\Request $request, $vencimento){
+        //$mes = $request->vencimento;
+        DB::table('mensalidades')->delete()->where('vencimento','=',$vencimento);
+        Session::flash('alert-success','Mensalidade removida sucesso.');
+        return redirect()->route('mensalidades.edit');  
+//            return redirect()->back();
 
-        $data = $request->all();
+        /*$data = $request->all();
         $this->repository->delete($mes);
         $request->session()->flash('alert-success','Mensalidade removida sucesso.');
-        return redirect()->route('mensalidades.edit');            
+        return redirect()->route('mensalidades.edit'); */           
     }
 
     public function pagar($id){
