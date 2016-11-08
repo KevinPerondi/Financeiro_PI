@@ -34,7 +34,7 @@
                 </button>
 
                 <!-- Branding Image -->
-                <a class="navbar-brand" href="{{ url('home') }}">Finanças</a>
+                <a class="navbar-brand" href="{{ url('admin/home') }}">Finanças</a>
 
             </div>
 

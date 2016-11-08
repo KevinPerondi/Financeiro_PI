@@ -20,12 +20,11 @@ Route::get('/',function (){
     return view('auth/login');    
 });
 
+
+Route::group(['prefix' => 'admin','middleware' => 'auth.checkrole', 'as' => 'admin.'], function(){
 Route::get('home', function (){
     return view('home');    
 });
-
-
-Route::group(['prefix' => 'admin','middleware' => 'auth.checkrole', 'as' => 'admin.'], function(){
 Route::get('users', ['as'=> 'users.index','uses'=>'UsersController@index']);
 Route::get('create',['as' => 'users.create', 'uses' =>'UsersController@create']);
 Route::get('edit/{id}',['as' => 'users.edit', 'uses' =>'UsersController@edit']);
