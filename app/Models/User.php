@@ -26,4 +26,8 @@ class User extends Authenticatable implements Transformable
         'password', 'remember_token',
     ];
 
+    public function mensalidades(){
+        return $this->hasMany(Mensalidade::class);
+    }
+
 }

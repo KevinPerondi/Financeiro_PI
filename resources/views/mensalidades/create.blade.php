@@ -3,8 +3,8 @@
 @section('content')
 
 <div class="container">
-    <h3>Edição de Despesa: {{$despesa->descrição}}</h3>
-
+    <h3>Cadastro de Doações</h3>
+    
     @if($errors->any())
         <ul class="allert">
             @foreach($errors->all() as $error)
@@ -13,29 +13,26 @@
         </ul>
     @endif
 
-    {!! Form::model($despesa,['route'=>['despesas.update', $despesa->id]]) !!}
+    {!! Form::open(['route'=>'doacaos.store', 'class'=>'form']) !!}
     
     <div class="form-group">
         {!! Form::label('Valor', 'Valor:') !!}
         {!! Form::text('valor',null,['class'=>'form-control']) !!}
         
-        {!! Form::label('Descrição', 'Descrição:') !!}
-        {!! Form::text('descrição',null,['class'=>'form-control']) !!}   
+        {!! Form::label('Donatário', 'Donatário:') !!}
+        {!! Form::text('donatario',null,['class'=>'form-control']) !!}   
         
-        {!! Form::label('Vencimento', 'Vencimento:') !!}
-        {!! Form::text('vencimento',null,['class'=>'form-control']) !!}          
+        {!! Form::label('Data', 'Data:') !!}
+        {!! Form::text('data',null,['class'=>'form-control']) !!}          
         
     </div>
     
     <div class="form-group">
-        {!! Form::submit('Editar Despesa', ['class'=>'btn btn-primary']) !!}
+        {!! Form::submit('Criar Doação', ['class'=>'btn btn-primary']) !!}
     </div>
-    
-    
     
     {!! Form::close() !!}
     
 </div>
-    
 
 @endsection
