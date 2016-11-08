@@ -18,12 +18,18 @@ Auth::routes();
 
 
 Route::get('/', function (){
+    return view('auth/login');
+    
+});
+
+Route::get('home', function (){
     return view('home');
     
-});Route::group(['prefix' => 'admin','middleware' => 'auth.checkrole', 'as' => 'admin.'], function(){
+});
 
+Route::group(['prefix' => 'admin','middleware' => 'auth.checkrole', 'as' => 'admin.'], function(){
 
-Route::get('users', ['as'=> 'home','uses'=>'UsersController@index']);
+Route::get('users', ['as'=> 'users','uses'=>'UsersController@index']);
 Route::get('create',['as' => 'create', 'uses' =>'UsersController@create']);
 Route::get('edit/{id}',['as' => 'edit', 'uses' =>'UsersController@edit']);
 Route::get('remove/{id}',['as' => 'remove', 'uses' =>'UsersController@remove']);
@@ -58,4 +64,4 @@ Route::get('/mensalidades/create', ['as'=> 'mensalidades.create','uses'=>'Mensal
 Route::get('/mensalidades/insert', ['as'=> 'mensalidades.insert','uses'=>'MensalidadesController@insert']);
 Route::get('/mensalidades/edit', ['as'=> 'mensalidades.edit','uses'=>'MensalidadesController@edit']);
 Route::post('/mensalidades/store',['as' => 'mensalidades.store', 'uses' =>'mensalidadesController@store']);
-Route::post('/mensalidades/update/{valor}', ['as'=> 'mensalidades.update','uses'=>'MensalidadesController@update']);
+Route::post('/mensalidades/update', ['as'=> 'mensalidades.update','uses'=>'MensalidadesController@update']);
