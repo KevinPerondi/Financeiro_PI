@@ -18,7 +18,7 @@
         <th>Valor atual</th>
         <td>{{$valor}}</td>
 
-    {!! Form::open(['route'=>'mensalidades.update', 'class'=>'form']) !!}
+    {!! Form::open(['route'=>'admin.mensalidades.update', 'class'=>'form']) !!}
         <div class="form-group">
             {!! Form::label('Valor', 'Valor:') !!}
             {!! Form::text('valor',null,['class'=>'form-control']) !!}
@@ -43,7 +43,7 @@
                 <td>{{$mensalidade->valor}}</td>
                 <td>{{$mensalidade->vencimento}}</td>
                 <td>
-                    <a href="{{route('mensalidades.delete',['vencimento'=>$mensalidade->vencimento])}}" class="btn btn-default btn-sm">
+                    <a href="{{route('admin.mensalidades.delete',['vencimento'=>$mensalidade->vencimento])}}" class="btn btn-default btn-sm">
                         Remover Mensalidade
                     </a>
 

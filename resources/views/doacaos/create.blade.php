@@ -13,7 +13,7 @@
         </ul>
     @endif
 
-    {!! Form::open(['route'=>'doacaos.store', 'class'=>'form']) !!}
+    {!! Form::open(['route'=>'admin.doacaos.store', 'class'=>'form']) !!}
     
     <div class="form-group">
         {!! Form::label('Valor', 'Valor:') !!}

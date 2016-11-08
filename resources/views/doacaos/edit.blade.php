@@ -13,7 +13,7 @@
         </ul>
     @endif
 
-    {!! Form::model($doacao,['route'=>['doacaos.update', $doacao->id]]) !!}
+    {!! Form::model($doacao,['route'=>['admin.doacaos.update', $doacao->id]]) !!}
     
     <div class="form-group">
         {!! Form::label('Valor', 'Valor:') !!}

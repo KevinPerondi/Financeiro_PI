@@ -13,7 +13,7 @@
         </ul>
     @endif
 
-    {!! Form::model($despesa,['route'=>['despesas.update', $despesa->id]]) !!}
+    {!! Form::model($despesa,['route'=>['admin.despesas.update', $despesa->id]]) !!}
     
     <div class="form-group">
         {!! Form::label('Valor', 'Valor:') !!}

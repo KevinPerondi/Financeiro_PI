@@ -15,7 +15,7 @@
 <div class="container">
     <h3>Despesas</h3>
     
-    <a href="{{route('despesas.create')}}" class="btn btn-default">Nova Despesa</a>
+    <a href="{{route('admin.despesas.create')}}" class="btn btn-default">Nova Despesa</a>
     <br><br>    
     <table class="table table-bordered">
         <thead>
@@ -33,10 +33,10 @@
                  <td>{{$despesa->valor}}</td>
                 <td>{{$despesa->descrição}}</td>
                 <td>{{$despesa->vencimento}}</td>
-                <td><a href="{{route('despesas.edit',['id'=>$despesa->id])}}" class="btn btn-default btn-sm">
+                <td><a href="{{route('admin.despesas.edit',['id'=>$despesa->id])}}" class="btn btn-default btn-sm">
                         Editar
                     </a>
-                    <a href="{{route('despesas.remove',['id'=>$despesa->id])}}" class="btn btn-default btn-sm">
+                    <a href="{{route('admin.despesas.remove',['id'=>$despesa->id])}}" class="btn btn-default btn-sm">
                         Remover
                     </a>
                 </td>
