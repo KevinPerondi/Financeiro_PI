@@ -16,11 +16,14 @@
 
 Auth::routes();
 
-
 Route::get('/', function (){
-    return view('home');
+    return view('/login');
     
-});Route::group(['prefix' => 'admin','middleware' => 'auth.checkrole', 'as' => 'admin.'], function(){
+});
+Route::group(['prefix' => 'admin','middleware' => 'auth.checkrole', 'as' => 'admin.'], function(){
+
+
+    
 
 
 Route::get('users', ['as'=> 'home','uses'=>'UsersController@index']);
@@ -31,7 +34,7 @@ Route::post('update/{id}',['as' => 'update', 'uses' =>'UsersController@update'])
 Route::post('store',['as' => 'store', 'uses' =>'UsersController@store']);
 
 
-
+  
 });
 
 
