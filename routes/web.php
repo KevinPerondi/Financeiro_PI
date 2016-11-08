@@ -16,61 +16,47 @@
 
 Auth::routes();
 
-Route::get('/', function (){
-<<<<<<< HEAD
-    return view('/login');
-    
-});
-Route::group(['prefix' => 'admin','middleware' => 'auth.checkrole', 'as' => 'admin.'], function(){
-
-
-    
-=======
-    return view('auth/login');
-    
+Route::get('/',function (){
+    return view('auth/login');    
 });
 
 Route::get('home', function (){
-    return view('home');
-    
+    return view('home');    
 });
->>>>>>> 745750960817ebe665add50822574fe91aa5f2dc
+
 
 Route::group(['prefix' => 'admin','middleware' => 'auth.checkrole', 'as' => 'admin.'], function(){
+Route::get('users', ['as'=> 'users.index','uses'=>'UsersController@index']);
+Route::get('create',['as' => 'users.create', 'uses' =>'UsersController@create']);
+Route::get('edit/{id}',['as' => 'users.edit', 'uses' =>'UsersController@edit']);
+Route::get('remove/{id}',['as' => 'users.remove', 'uses' =>'UsersController@remove']);
+Route::post('update/{id}',['as' => 'users.update', 'uses' =>'UsersController@update']);
+Route::post('store',['as' => 'users.store', 'uses' =>'UsersController@store']);
 
-Route::get('users', ['as'=> 'users','uses'=>'UsersController@index']);
-Route::get('create',['as' => 'create', 'uses' =>'UsersController@create']);
-Route::get('edit/{id}',['as' => 'edit', 'uses' =>'UsersController@edit']);
-Route::get('remove/{id}',['as' => 'remove', 'uses' =>'UsersController@remove']);
-Route::post('update/{id}',['as' => 'update', 'uses' =>'UsersController@update']);
-Route::post('store',['as' => 'store', 'uses' =>'UsersController@store']);
+
+Route::get('despesas', ['as'=> 'despesas.index','uses'=>'DespesasController@index']);
+Route::get('despesas/create',['as' => 'despesas.create', 'uses' =>'DespesasController@create']);
+Route::get('despesas/edit/{id}',['as' => 'despesas.edit', 'uses' =>'DespesasController@edit']);
+Route::get('despesas/remove/{id}',['as' => 'despesas.remove', 'uses' =>'DespesasController@remove']);
+Route::post('despesas/update/{id}',['as' => 'despesas.update', 'uses' =>'DespesasController@update']);
+Route::post('despesas/store',['as' => 'despesas.store', 'uses' =>'DespesasController@store']);
 
 
-  
+Route::get('doacoes', ['as'=> 'doacaos.index','uses'=>'DoacaosController@index']);
+Route::get('doacoes/create',['as' => 'doacaos.create', 'uses' =>'DoacaosController@create']);
+Route::get('doacoes/edit/{id}',['as' => 'doacaos.edit', 'uses' =>'DoacaosController@edit']);
+Route::get('doacoes/remove/{id}',['as' => 'doacaos.remove', 'uses' =>'DoacaosController@remove']);
+Route::post('doacoes/update/{id}',['as' => 'doacaos.update', 'uses' =>'DoacaosController@update']);
+Route::post('doacoes/store',['as' => 'doacaos.store', 'uses' =>'DoacaosController@store']);
+
+
+
 });
 
-
-Route::get('/despesas', ['as'=> 'despesas.home','uses'=>'DespesasController@index']);
-Route::get('/despesas/create',['as' => 'despesas.create', 'uses' =>'DespesasController@create']);
-Route::get('/despesas/edit/{id}',['as' => 'despesas.edit', 'uses' =>'DespesasController@edit']);
-Route::get('/despesas/remove/{id}',['as' => 'despesas.remove', 'uses' =>'DespesasController@remove']);
-Route::post('/despesas/update/{id}',['as' => 'despesas.update', 'uses' =>'DespesasController@update']);
-Route::post('/despesas/store',['as' => 'despesas.store', 'uses' =>'DespesasController@store']);
-
-
-Route::get('/doacoes', ['as'=> 'doacaos.home','uses'=>'DoacaosController@index']);
-Route::get('/doacoes/create',['as' => 'doacaos.create', 'uses' =>'DoacaosController@create']);
-Route::get('/doacoes/edit/{id}',['as' => 'doacaos.edit', 'uses' =>'DoacaosController@edit']);
-Route::get('/doacoes/remove/{id}',['as' => 'doacaos.remove', 'uses' =>'DoacaosController@remove']);
-Route::post('/doacoes/update/{id}',['as' => 'doacaos.update', 'uses' =>'DoacaosController@update']);
-Route::post('/doacoes/store',['as' => 'doacaos.store', 'uses' =>'DoacaosController@store']);
-
-
-Route::get('/mensalidades/user/{user_id}', ['as'=> 'mensalidades.user','uses'=>'MensalidadesController@user']);
-
-Route::get('/mensalidades/user/pagar/{id}', ['as'=> 'mensalidades.pagar','uses'=>'MensalidadesController@pagar']);
-Route::get('/mensalidades/create', ['as'=> 'mensalidades.create','uses'=>'MensalidadesController@create']);
-Route::get('/mensalidades/insert', ['as'=> 'mensalidades.insert','uses'=>'MensalidadesController@insert']);
-Route::get('/mensalidades/edit', ['as'=> 'mensalidades.edit','uses'=>'MensalidadesController@edit']);
-Route::post('/mensalidades/store',['as' => 'mensalidades.store', 'uses' =>'mensalidadesController@store']);
-Route::post('/mensalidades/update', ['as'=> 'mensalidades.update','uses'=>'MensalidadesController@update']);
+Route::get('mensalidades/user/{user_id}', ['as'=> 'mensalidades.user','uses'=>'MensalidadesController@user']);
+Route::get('mensalidades/user/pagar/{id}', ['as'=> 'mensalidades.pagar','uses'=>'MensalidadesController@pagar']);
+Route::get('mensalidades/create', ['as'=> 'mensalidades.create','uses'=>'MensalidadesController@create']);
+Route::get('mensalidades/insert', ['as'=> 'mensalidades.insert','uses'=>'MensalidadesController@insert']);
+Route::get('mensalidades/edit', ['as'=> 'mensalidades.edit','uses'=>'MensalidadesController@edit']);
+Route::post('mensalidades/store',['as' => 'mensalidades.store', 'uses' =>'mensalidadesController@store']);
+Route::post('mensalidades/update', ['as'=> 'mensalidades.update','uses'=>'MensalidadesController@update']);

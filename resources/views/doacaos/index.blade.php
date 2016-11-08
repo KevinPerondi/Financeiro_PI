@@ -15,7 +15,7 @@
 <div class="container">
     <h3>Doações</h3>
     
-    <a href="{{route('doacaos.create')}}" class="btn btn-default">Nova Doação</a>
+    <a href="{{route('admin.doacaos.create')}}" class="btn btn-default">Nova Doação</a>
     <br><br>    
     <table class="table table-bordered">
         <thead>
@@ -33,10 +33,10 @@
                  <td>{{$doacao->valor}}</td>
                 <td>{{$doacao->donatario}}</td>
                 <td>{{$doacao->data}}</td>
-                <td><a href="{{route('doacaos.edit',['id'=>$doacao->id])}}" class="btn btn-default btn-sm">
+                <td><a href="{{route('admin.doacaos.edit',['id'=>$doacao->id])}}" class="btn btn-default btn-sm">
                         Editar
                     </a>
-                    <a href="{{route('doacaos.remove',['id'=>$doacao->id])}}" class="btn btn-default btn-sm">
+                    <a href="{{route('admin.doacaos.remove',['id'=>$doacao->id])}}" class="btn btn-default btn-sm">
                         Remover
                     </a>
                 </td>

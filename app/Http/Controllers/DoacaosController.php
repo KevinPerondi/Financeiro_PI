@@ -26,7 +26,7 @@ class DoacaosController extends Controller
         $data = $request->all();
         $this->repository->create($data);
         $request->session()->flash('alert-success','Doação criada com sucesso.');
-        return redirect()->route('doacaos.home');
+        return redirect()->route('admin.doacaos.home');
         
     }
 

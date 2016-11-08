@@ -23,7 +23,7 @@
         </ul>
     @endif
     
-    {!! Form::model($user,['route'=>['admin.update', $user->id]]) !!}
+    {!! Form::model($user,['route'=>['admin.users.update', $user->id]]) !!}
     
     <div class="form-group">
         {!! Form::label('CPF', 'CPF:') !!}

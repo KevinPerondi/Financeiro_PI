@@ -41,9 +41,9 @@
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <!-- Left Side Of Navbar -->
                 <ul class="nav navbar-nav">
-                    <li><a href="{{ route('admin.users') }}">Usuarios</a></li>
-                    <li><a href="{{ route('despesas.home') }}">Despesas</a></li>
-                    <li><a href="{{ route('doacaos.home') }}">Doações</a></li>
+                    <li><a href="{{ route('admin.users.index') }}">Usuarios</a></li>
+                    <li><a href="{{ route('admin.despesas.index') }}">Despesas</a></li>
+                    <li><a href="{{ route('admin.doacaos.index') }}">Doações</a></li>
                 </ul>
                 
                 <!-- Right Side Of Navbar -->
