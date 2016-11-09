@@ -36,17 +36,13 @@ class MensalidadesController extends Controller
        }
     }
 
-    public function delete(\Symfony\Component\HttpFoundation\Request $request, $vencimento){
-        //$mes = $request->vencimento;
-        DB::table('mensalidades')->delete()->where('vencimento','=',$vencimento);
+    public function delete(\Symfony\Component\HttpFoundation\Request $request, $id){
+        //gambis delete funciona, mas não printa o flash...
+        $slct = DB::table('mensalidades')->where('id','=',$id)->first();
+        $mes = $slct->vencimento;
+        DB::table('mensalidades')->where('vencimento', '=', $mes)->delete();
         Session::flash('alert-success','Mensalidade removida sucesso.');
         return redirect()->route('admin.mensalidades.edit');  
-//            return redirect()->back();
-
-        /*$data = $request->all();
-        $this->repository->delete($mes);
-        $request->session()->flash('alert-success','Mensalidade removida sucesso.');
-        return redirect()->route('mensalidades.edit'); */           
     }
 
     public function pagar($id){
