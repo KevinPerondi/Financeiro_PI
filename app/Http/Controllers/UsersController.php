@@ -68,5 +68,20 @@ class UsersController extends Controller
 
     }
 
+
+    public function updaterole(Requests\UserRequest $request, $id){
+        $data = $request->all();
+        $result = DB::table('users')->where('id','=',$id)->first();
+
+        if ($request->cpf != $result->cpf){
+            return Redirect::back()->with($request->session()->flash('alert-danger','O campo CPF foi alterado'));    
+        }
+        else{
+            DB::update('update users where id = ? set role = ?', [$id],'admin');
+            $request->session()->flash('alert-success','Usuário modificado com sucesso.');
+            return redirect()->route('admin.users.index');
+        }
+    }
+
     
 }

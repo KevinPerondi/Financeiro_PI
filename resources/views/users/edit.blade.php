@@ -52,9 +52,8 @@
     </div>
     
     
-    
     {!! Form::close() !!}
-    
+
 </div>
     
 

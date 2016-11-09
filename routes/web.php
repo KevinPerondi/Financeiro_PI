@@ -26,11 +26,16 @@ Route::get('home', function (){
 
 
 Route::group(['prefix' => 'admin','middleware' => 'auth.checkrole', 'as' => 'admin.'], function(){
+Route::get('home', function (){
+    return view('home');    
+});
 Route::get('users', ['as'=> 'users.index','uses'=>'UsersController@index']);
 Route::get('create',['as' => 'users.create', 'uses' =>'UsersController@create']);
 Route::get('edit/{id}',['as' => 'users.edit', 'uses' =>'UsersController@edit']);
 Route::get('remove/{id}',['as' => 'users.remove', 'uses' =>'UsersController@remove']);
 Route::post('update/{id}',['as' => 'users.update', 'uses' =>'UsersController@update']);
+Route::post('updaterole/{id}',['as' => 'users.updaterole', 'uses' =>'UsersController@updaterole']);
+
 Route::post('store',['as' => 'users.store', 'uses' =>'UsersController@store']);
 
 

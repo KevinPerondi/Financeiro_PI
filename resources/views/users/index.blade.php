@@ -47,6 +47,7 @@
                     <a href="{{route('admin.mensalidades.user',['user_id'=>$user->id])}}" class="btn btn-default btn-sm">
                         Mensalidades
                     </a>
+                    
 
                 </td>
             </tr>
