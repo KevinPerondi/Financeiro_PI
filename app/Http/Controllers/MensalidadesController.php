@@ -64,14 +64,11 @@ class MensalidadesController extends Controller
         return view('mensalidades.edit', compact('mensalidades'))->with('valor',$valor[0]->valor)->with('dia',$dia[0]->dia);
     }
 
-    public function update(\Symfony\Component\HttpFoundation\Request $request){
-        //dd($this->valor);
+    public function update(Requests\MensalidadeRequest $request){
         $valor=$request->valor;
         $dia = $request->dia;
         DB::update('update valores set valor = ?', [$valor]);
         DB::update('update valores set dia = ?', [$dia]);
-        //dd($request->valor);
-        //dd($this->valor);
         Session::flash('alert-success','Mensalidade alterada com sucesso.');
         return redirect()->route('admin.mensalidades.edit');
 

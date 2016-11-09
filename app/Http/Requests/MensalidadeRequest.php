@@ -25,8 +25,8 @@ class MensalidadeRequest extends FormRequest
     {
         return [
             'valor' => 'required|numeric',
-            'vencimento' => 'required|date_format:"d/m/Y"',
-            'status' => 'required|between:3,100',
+            'dia' => 'required|numeric|between:1,31',
+            //'status' => 'required|between:3,100',
         ];
     }
 }
