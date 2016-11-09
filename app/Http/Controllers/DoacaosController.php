@@ -26,7 +26,7 @@ class DoacaosController extends Controller
         $data = $request->all();
         $this->repository->create($data);
         $request->session()->flash('alert-success','Doação criada com sucesso.');
-        return redirect()->route('admin.doacaos.home');
+        return redirect()->route('admin.doacaos.index');
         
     }
 
@@ -40,7 +40,7 @@ class DoacaosController extends Controller
         $data = $request->all();
         $this->repository->update($data,$id);
         $request->session()->flash('alert-success','Doação editada com sucesso.');
-        return redirect()->route('doacaos.home');
+        return redirect()->route('admin.doacaos.index');
 
     }
 
@@ -48,7 +48,7 @@ class DoacaosController extends Controller
         $data = $request->all();
         $this->repository->delete($id);
         $request->session()->flash('alert-success','Doação removida com sucesso.');
-        return redirect()->route('doacaos.home');
+        return redirect()->route('admin.doacaos.index');
 
     }
 

@@ -33,7 +33,7 @@ class UsersController extends Controller
         if (is_null($result)){
             $this->repository->create($data);
             $request->session()->flash('alert-success','Usuário criado com sucesso.');
-            return redirect()->route('users.home');
+            return redirect()->route('admin.users.index');
         }
         else{
         return Redirect::back()->with($request->session()->flash('alert-danger','CPF já existente.'));
@@ -56,7 +56,7 @@ class UsersController extends Controller
         else{
             $this->repository->update($data,$id);
             $request->session()->flash('alert-success','Usuário modificado com sucesso.');
-            return redirect()->route('users.home');
+            return redirect()->route('admin.users.index');
         }
     }
 
@@ -64,7 +64,7 @@ class UsersController extends Controller
         $data = $request->all();
         $this->repository->delete($id);
         $request->session()->flash('alert-success','Usuário excluído com sucesso.');
-        return redirect()->route('users.home');
+        return redirect()->route('admin.users.index');
 
     }
 

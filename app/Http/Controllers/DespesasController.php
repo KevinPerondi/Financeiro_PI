@@ -26,7 +26,7 @@ class DespesasController extends Controller
         $data = $request->all();
         $this->repository->create($data);
         $request->session()->flash('alert-success','Despesa criada com sucesso.');
-        return redirect()->route('despesas.home');
+        return redirect()->route('admin.despesas.index');
         
     }
 
@@ -40,7 +40,7 @@ class DespesasController extends Controller
         $data = $request->all();
         $this->repository->update($data,$id);
         $request->session()->flash('alert-success','Despesa editada com sucesso.');
-        return redirect()->route('despesas.home');
+        return redirect()->route('admin.despesas.index');
 
     }
 
@@ -48,7 +48,7 @@ class DespesasController extends Controller
         $data = $request->all();
         $this->repository->delete($id);
         $request->session()->flash('alert-success','Despesa removida com sucesso.');
-        return redirect()->route('despesas.home');
+        return redirect()->route('admin.despesas.index');
 
     }
 
