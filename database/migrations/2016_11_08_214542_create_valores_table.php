@@ -16,6 +16,7 @@ class CreateValoresTable extends Migration
         Schema::create('valores', function(Blueprint $table) {
             $table->increments('id');
             $table->float('valor');
+            $table->float('dia');
             $table->timestamps();
         }); //
     }

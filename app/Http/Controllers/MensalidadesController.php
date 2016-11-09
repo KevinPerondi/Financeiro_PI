@@ -30,9 +30,11 @@ class MensalidadesController extends Controller
 
     public function insert(){
        $users = DB::table('users')->get();
+        $valor = DB::table('valores')->select('valor')->where('id','=',1)->get();
+        $dia = DB::table('valores')->select('dia')->where('id','=',1)->get();
         foreach ($users as $user) {
             DB::table('mensalidades')->insertGetId(
-            ['valor'=>$this->valor, 'user_id' => $user->id,'vencimento'=>Carbon::now()->startOfMonth()->addMonths(1)->addDays(4)->format('d/m/Y'),'status'=>'Pendente']);
+            ['valor'=>$valor[0]->valor, 'user_id' => $user->id,'vencimento'=>Carbon::now()->startOfMonth()->addMonths(1)->addDays($dia[0]->dia-1)->format('d/m/Y'),'status'=>'Pendente']);
        }
     }
 
@@ -61,14 +63,17 @@ class MensalidadesController extends Controller
     public function edit(){
        $mensalidades = DB::table('mensalidades')->where('user_id','=',1)->get();
        $valor = DB::table('valores')->select('valor')->where('id','=',1)->get();
+       $dia = DB::table('valores')->select('dia')->where('id','=',1)->get();
 
-        return view('mensalidades.edit', compact('mensalidades'))->with('valor',$valor[0]->valor);
+        return view('mensalidades.edit', compact('mensalidades'))->with('valor',$valor[0]->valor)->with('dia',$dia[0]->dia);
     }
 
     public function update(\Symfony\Component\HttpFoundation\Request $request){
         //dd($this->valor);
         $valor=$request->valor;
+        $dia = $request->dia;
         DB::update('update valores set valor = ?', [$valor]);
+        DB::update('update valores set dia = ?', [$dia]);
         //dd($request->valor);
         //dd($this->valor);
         Session::flash('alert-success','Mensalidade alterada com sucesso.');

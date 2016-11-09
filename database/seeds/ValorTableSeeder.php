@@ -12,6 +12,6 @@ class ValorTableSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('valores')->insertGetId(['valor'=>50]);
+        DB::table('valores')->insertGetId(['valor'=>0,'dia'=>1]);
     }
 }

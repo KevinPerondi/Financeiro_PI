@@ -16,21 +16,31 @@
     <table class="table table-bordered">
         <thead>
         <th>Valor atual</th>
+        <th>Dia</th>
+</thead>
+
+<tbody>
         <td>{{$valor}}</td>
+         <td>{{$dia}}</td>
+</tbody>
+</table>
 
     {!! Form::open(['route'=>'admin.mensalidades.update', 'class'=>'form']) !!}
         <div class="form-group">
             {!! Form::label('Valor', 'Valor:') !!}
-            {!! Form::text('valor',null,['class'=>'form-control']) !!}
+            {!! Form::text('valor',$valor,['class'=>'form-control']) !!}
+            {!! Form::label('Dia do Vencimento', 'Dia do Vencimento:') !!}
+            {!! Form::text('dia',$dia,['class'=>'form-control']) !!}
 
         </div>
 
         <div class="form-group">
-            {!! Form::submit('Editar Despesa', ['class'=>'btn btn-primary']) !!}
+            {!! Form::submit('Editar Mensalidade', ['class'=>'btn btn-primary']) !!}
         </div>
 
     {!! Form::close() !!}
-
+<table class="table table-bordered">
+<thead>
             <tr>
                 <th>Valor</th>
                 <th>Vencimento</th>
