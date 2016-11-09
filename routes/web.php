@@ -56,6 +56,6 @@ Route::get('/mensalidades/insert', ['as'=> 'mensalidades.insert','uses'=>'Mensal
 Route::get('/mensalidades/edit', ['as'=> 'mensalidades.edit','uses'=>'MensalidadesController@edit']);
 Route::post('/mensalidades/store',['as' => 'mensalidades.store', 'uses' =>'mensalidadesController@store']);
 Route::post('/mensalidades/update', ['as'=> 'mensalidades.update','uses'=>'MensalidadesController@update']);
-Route::get('/mensalidades/delete/{vencimento}',['as' => 'mensalidades.delete', 'uses' =>'MensalidadesController@delete']);
+Route::get('/mensalidades/delete/{id}',['as' => 'mensalidades.delete', 'uses' =>'MensalidadesController@delete']);
 Route::get('mensalidades/user/{user_id}', ['as'=> 'mensalidades.user','uses'=>'MensalidadesController@user']);
 });
