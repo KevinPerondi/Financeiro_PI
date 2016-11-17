@@ -23,6 +23,17 @@ class UserTableSeeder extends Seeder
 
             ]);
 
+                factory(\PI\Models\User::class)->create([
+            'cpf' => '43798018880',
+            'name' => 'felipe',
+            'email' => 'felipe@user.com',
+            'telefone' => '4499540347',
+            'endereço' => 'rua brAAsil',
+            'password' => bcrypt(123456),
+            'role' => 'user',
+
+            ]);
+
     	factory(\PI\Models\User::class, 10)->create()->each(function ($c){
             for ($i = 0; $i<5; $i++){
                 $c->mensalidades()->save(factory(\PI\Models\Mensalidade::class)->make());
