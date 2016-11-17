@@ -30,11 +30,7 @@ class UsersController extends Controller
         $data = $request->all();
         $pass = bcrypt($data['password']);
         $data['password']= $pass;
-//       ['name' => 'John', 'age' => 35]
-       // 
-    
-        
-
+        $data['situacao'] = 'Ativo';
         $result = DB::table('users')->where('cpf','=',$request->cpf)->first();
         if (is_null($result)){
             $this->repository->create($data);
@@ -67,8 +63,9 @@ class UsersController extends Controller
     }
 
     public function remove(\Symfony\Component\HttpFoundation\Request $request, $id){
-        $data = $request->all();
-        $this->repository->delete($id);
+        DB::table('users')->where('id','=',$id)->update(['situacao' => 'Deletado']);
+        //$data = $request->all();
+        //$this->repository->delete($id);
         $request->session()->flash('alert-success','Usuário excluído com sucesso.');
         return redirect()->route('admin.users.index');
 
