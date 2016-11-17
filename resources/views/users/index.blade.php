@@ -59,7 +59,6 @@
         
     </table>
     
-    {!! $users->render() !!}
 </div>
     
 

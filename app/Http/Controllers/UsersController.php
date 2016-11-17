@@ -17,7 +17,7 @@ class UsersController extends Controller
 
         public function index (\PI\Repositories\UserRepositoryEloquent $repository) {
     	
-        $users = $this->repository->paginate(5);
+        $users = DB::table('users')->where('situacao', '=','Ativo')->get();
         return view('users.index', compact('users'));
     }
     

@@ -20,6 +20,7 @@ $factory->define(PI\Models\User::class, function (Faker\Generator $faker) {
         'telefone' => $faker->phoneNumber,
         'endereço' => $faker->streetAddress,
         'email' => $faker->unique()->safeEmail,
+        'situacao' => $faker->randomElement(["Ativo","Deletado"]),
         'password' => $password ?: $password = bcrypt('secret'),
         'remember_token' => str_random(10),
         'role'=>$faker->randomElement(["user"]),
