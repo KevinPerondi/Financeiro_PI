@@ -28,6 +28,12 @@ class UsersController extends Controller
     
     public function store (Requests\UserRequest $request){
         $data = $request->all();
+        $pass = bcrypt($data['password']);
+        $data['password']= $pass;
+//       ['name' => 'John', 'age' => 35]
+       // 
+    
+        
 
         $result = DB::table('users')->where('cpf','=',$request->cpf)->first();
         if (is_null($result)){
