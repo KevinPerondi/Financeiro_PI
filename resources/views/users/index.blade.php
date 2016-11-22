@@ -41,7 +41,7 @@
                     <a href="{{route('admin.users.edit',['id'=>$user->id])}}" class="btn btn-default btn-sm">
                         Editar
                     </a>
-                    <a href="{{route('admin.users.remove',['id'=>$user->id])}}" class="btn btn-default btn-sm">
+                    <a href="{{route('admin.users.remove',['id'=>$user->id])}}" class="btn btn-default btn-sm" onclick="return confirm('Deseja remover esse usuário?');">
                         Remover
                     </a>
                     <a href="{{route('admin.mensalidades.user',['user_id'=>$user->id])}}" class="btn btn-default btn-sm">

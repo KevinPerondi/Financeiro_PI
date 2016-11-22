@@ -36,7 +36,7 @@
                 <td><a href="{{route('admin.despesas.edit',['id'=>$despesa->id])}}" class="btn btn-default btn-sm">
                         Editar
                     </a>
-                    <a href="{{route('admin.despesas.remove',['id'=>$despesa->id])}}" class="btn btn-default btn-sm">
+                    <a href="{{route('admin.despesas.remove',['id'=>$despesa->id])}}" class="btn btn-default btn-sm" onclick="return confirm('Deseja remover essa despesa?');">
                         Remover
                     </a>
                 </td>

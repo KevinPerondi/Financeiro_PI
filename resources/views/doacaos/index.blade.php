@@ -36,7 +36,7 @@
                 <td><a href="{{route('admin.doacaos.edit',['id'=>$doacao->id])}}" class="btn btn-default btn-sm">
                         Editar
                     </a>
-                    <a href="{{route('admin.doacaos.remove',['id'=>$doacao->id])}}" class="btn btn-default btn-sm">
+                    <a href="{{route('admin.doacaos.remove',['id'=>$doacao->id])}}" class="btn btn-default btn-sm" onclick="return confirm('Deseja remover essa doação?');">
                         Remover
                     </a>
                 </td>
