@@ -61,7 +61,7 @@
                 <td>{{$mensalidade->valor}}</td>
                 <td>{{$mensalidade->vencimento}}</td>
                 <td>
-                    <a href="{{route('admin.mensalidades.delete',['id'=>$mensalidade->id])}}" class="btn btn-default btn-sm">
+                    <a href="{{route('admin.mensalidades.delete',['id'=>$mensalidade->id])}}" class="btn btn-default btn-sm" onclick="return confirm('Remover esta mensalidade?');">
                         Remover Mensalidade
                     </a>
 
