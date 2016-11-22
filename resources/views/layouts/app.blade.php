@@ -45,6 +45,7 @@
                     <li><a href="{{ route('admin.users.index') }}">Usuarios</a></li>
                     <li><a href="{{ route('admin.despesas.index') }}">Despesas</a></li>
                     <li><a href="{{ route('admin.doacaos.index') }}">Doações</a></li>
+                    <li><a href="{{ route('admin.mensalidades.edit') }}">Mensalidades</a></li>
                 </ul>
                 
                 <!-- Right Side Of Navbar -->

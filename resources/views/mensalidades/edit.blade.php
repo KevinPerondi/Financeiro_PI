@@ -20,18 +20,7 @@
             @endforeach
         </ul>
     @endif
-  
-    <table class="table table-bordered">
-        <thead>
-        <th>Valor atual</th>
-        <th>Dia</th>
-</thead>
 
-<tbody>
-        <td>{{$valor}}</td>
-         <td>{{$dia}}</td>
-</tbody>
-</table>
 
     {!! Form::open(['route'=>'admin.mensalidades.update', 'class'=>'form']) !!}
         <div class="form-group">
@@ -43,7 +32,7 @@
         </div>
 
         <div class="form-group">
-            {!! Form::submit('Editar Mensalidade', ['class'=>'btn btn-primary']) !!}
+            {!! Form::submit('Criar Mensalidade', ['class'=>'btn btn-primary']) !!}
         </div>
 
     {!! Form::close() !!}

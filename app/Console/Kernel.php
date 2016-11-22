@@ -26,8 +26,8 @@ class Kernel extends ConsoleKernel
     {
         // $schedule->command('inspire')
         //          ->hourly();
-        $schedule->call('PI\Http\Controllers\MensalidadesController@insert')
-                ->everyMinute();
+        //$schedule->call('PI\Http\Controllers\MensalidadesController@insert')
+          //      ->everyMinute();
     }
 
     /**

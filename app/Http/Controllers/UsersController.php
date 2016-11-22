@@ -18,7 +18,8 @@ class UsersController extends Controller
         public function index (\PI\Repositories\UserRepositoryEloquent $repository) {
     	
         $users = DB::table('users')->where('situacao', '=','Ativo')->get();
-        return view('users.index', compact('users'));
+        $usersdeletados = DB::table('users')->where('situacao', '=','Deletado')->get();
+        return view('users.index', compact('users','usersdeletados'));
     }
     
     

@@ -29,7 +29,7 @@ class MensalidadesController extends Controller
     }
 
     public function insert(){
-       $users = DB::table('users')->get();
+        $users = DB::table('users')->select('*')->where('situacao','=','Ativo')->get();
         $valor = DB::table('valores')->select('valor')->where('id','=',1)->get();
         $dia = DB::table('valores')->select('dia')->where('id','=',1)->get();
         foreach ($users as $user) {
@@ -69,7 +69,20 @@ class MensalidadesController extends Controller
         $dia = $request->dia;
         DB::update('update valores set valor = ?', [$valor]);
         DB::update('update valores set dia = ?', [$dia]);
-        Session::flash('alert-success','Mensalidade alterada com sucesso.');
+        
+        
+        $users = DB::table('users')->select('*')->where('situacao','=','Ativo')->get();
+        $valor = DB::table('valores')->select('valor')->where('id','=',1)->get();
+        $dia = DB::table('valores')->select('dia')->where('id','=',1)->get();
+        
+        foreach ($users as $user) {
+            DB::table('mensalidades')->insertGetId(
+            ['valor'=>$valor[0]->valor, 'user_id' => $user->id,'vencimento'=>Carbon::now()->startOfMonth()->addMonths(1)->addDays($dia[0]->dia-1)->format('d/m/Y'),'status'=>'Pendente']);
+       }
+
+       Session::flash('alert-success','Mensalidade criada com sucesso.');
+
+
         return redirect()->route('admin.mensalidades.edit');
 
     }
