@@ -29,7 +29,7 @@ class MensalidadesController extends Controller
     }
 
     public function insert(){
-        $users = DB::table('users')->select('*')->where('situacao','=','Ativo')->get();
+        $users = DB::table('users')->select('*')->where('situacao','!=','Deletado')->get();
         $valor = DB::table('valores')->select('valor')->where('id','=',1)->get();
         $dia = DB::table('valores')->select('dia')->where('id','=',1)->get();
         foreach ($users as $user) {

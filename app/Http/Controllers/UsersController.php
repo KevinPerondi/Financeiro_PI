@@ -17,7 +17,7 @@ class UsersController extends Controller
 
         public function index (\PI\Repositories\UserRepositoryEloquent $repository) {
     	
-        $users = DB::table('users')->where('situacao', '=','Ativo')->get();
+        $users = DB::table('users')->where('situacao', '!=','Deletado')->get();
         $usersdeletados = DB::table('users')->where('situacao', '=','Deletado')->get();
         return view('users.index', compact('users','usersdeletados'));
     }
@@ -31,7 +31,9 @@ class UsersController extends Controller
         $data = $request->all();
         $pass = bcrypt($data['password']);
         $data['password']= $pass;
-        $data['situacao'] = 'Ativo';
+        $data['role']='user';
+        $data['situacao'] = "Ativo'";
+        //dd($data);
         $result = DB::table('users')->where('cpf','=',$request->cpf)->first();
         if (is_null($result)){
             $this->repository->create($data);
