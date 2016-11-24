@@ -61,3 +61,6 @@ Route::post('/mensalidades/update', ['as'=> 'mensalidades.update','uses'=>'Mensa
 Route::get('/mensalidades/delete/{id}',['as' => 'mensalidades.delete', 'uses' =>'MensalidadesController@delete']);
 Route::get('mensalidades/user/{user_id}', ['as'=> 'mensalidades.user','uses'=>'MensalidadesController@user']);
 });
+
+Route::get('usuario','UsuarioController@index');
+Route::get('usuario/despesas',['as'=> 'usuario.despesas','uses'=>'UsuarioController@despesas']);
