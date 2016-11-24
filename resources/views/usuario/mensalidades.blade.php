@@ -10,39 +10,42 @@
       @endif
     @endforeach
   </div> <!-- end .flash-message -->  
+    
 
 
 <div class="container">
-    <h3>Despesas</h3>
-    
-
-    <br><br>    
+    <h3>Mensalidades</h3> 
+  
     <table class="table table-bordered">
         <thead>
             <tr>
                 <th>Valor</th>
-                <th>Descrição</th>
                 <th>Vencimento</th>
-            </tr>
-            
+                <th>Situação</th>
+            </tr>         
         </thead>
         <tbody>
-             @foreach($despesas as $despesa)
+             @foreach($mensalidades as $mensalidade)
             <tr>
-                 <td>{{$despesa->valor}}</td>
-                <td>{{$despesa->descrição}}</td>
-                <td>{{$despesa->vencimento}}</td>
+                <td>{{$mensalidade->valor}}</td>
+                <td>{{$mensalidade->vencimento}}</td>
+                <td>{{$mensalidade->status}}</td>
+                <td>
+                 
 
             </tr>
-                @endforeach    
+                @endforeach 
+ 
             
-        </tbody>
-            
-        
-        
+        </tbody>        
     </table>
-    
-    {!! $despesas->render() !!}
+    <table class="table table-bordered">
+                    <td>Saldo</td>
+
+                <td align="right">R${{$saldo}}</td>  
+                
+        </table>
+
 </div>
     
 

@@ -64,3 +64,4 @@ Route::get('mensalidades/user/{user_id}', ['as'=> 'mensalidades.user','uses'=>'M
 
 Route::get('usuario','UsuarioController@index');
 Route::get('usuario/despesas',['as'=> 'usuario.despesas','uses'=>'UsuarioController@despesas']);
+Route::get('usuario/mensalidades',['as'=> 'usuario.mensalidades','uses'=>'UsuarioController@mensalidades']);
