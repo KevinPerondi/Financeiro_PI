@@ -14,7 +14,7 @@ class User extends Authenticatable implements Transformable
     use TransformableTrait, Notifiable;
 
     protected $fillable = [
-        'cpf','name', 'email','telefone','endereço', 'password', 'role',
+        'cpf','name', 'email','telefone','endereço', 'password', 'role','situacao',
     ];
 
     /**
@@ -29,5 +29,6 @@ class User extends Authenticatable implements Transformable
     public function mensalidades(){
         return $this->hasMany(Mensalidade::class);
     }
+
 
 }

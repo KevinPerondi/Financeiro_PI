@@ -32,8 +32,8 @@ class UsersController extends Controller
         $pass = bcrypt($data['password']);
         $data['password']= $pass;
         $data['role']='user';
-        $data['situacao'] = "Ativo'";
-        //dd($data);
+        $data['situacao'] = 'Ativo';
+       // dd($data);
         $result = DB::table('users')->where('cpf','=',$request->cpf)->first();
         if (is_null($result)){
             $this->repository->create($data);
