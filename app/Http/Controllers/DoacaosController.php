@@ -14,7 +14,7 @@ class DoacaosController extends Controller
 
     public function index (\PI\Repositories\DoacaoRepositoryEloquent $repository) {
     	
-        $doacaos = $this->repository->paginate(5);
+        $doacaos = $this->repository->all();
         return view('doacaos.index', compact('doacaos'));
     }
     

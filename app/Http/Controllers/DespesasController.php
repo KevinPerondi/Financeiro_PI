@@ -14,7 +14,7 @@ class DespesasController extends Controller
 
     public function index (\PI\Repositories\DespesaRepositoryEloquent $repository) {
     	
-        $despesas = $this->repository->paginate(5);
+        $despesas = $this->repository->all();
         return view('despesas.index', compact('despesas'));
     }
     
