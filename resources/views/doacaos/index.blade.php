@@ -50,7 +50,6 @@
         
     </table>
     
-    {!! $doacaos->render() !!}
 </div>
     
 
