@@ -7,7 +7,6 @@
 
 
             <a href="{{route('admin.users.index')}}" class="btn btn-default" style="height:40px; width:200px">Usuarios</a>
-
             <br><br>
             <a href="{{route('admin.despesas.index')}}" class="btn btn-default" style="height:40px; width:200px">Despesas</a>
             <br><br>
