@@ -7,6 +7,7 @@ use PI\Http\Requests;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Session;
 use Carbon\Carbon;
+use Illuminate\Support\Facades\Auth;
 
 class UsuarioController extends Controller
 {
@@ -24,10 +25,8 @@ class UsuarioController extends Controller
         return view('usuario.despesas', compact('despesas'));
     }
 
-    public function mensalidades(Requests\UserRequest $request){
-        $data = $request->all();
-        dd($data);
-        $user_id = $data->id;
+    public function mensalidades(){
+        $user_id = Auth::user()->id;
 
     	$mensalidades = DB::table('mensalidades')->where('user_id','=',$user_id)->get();
         $saldo=0;
