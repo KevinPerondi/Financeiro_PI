@@ -63,7 +63,7 @@ Route::get('mensalidades/user/{user_id}', ['as'=> 'mensalidades.user','uses'=>'M
 });
 
 Route::group(['prefix' => 'user','middleware' => 'auth.checkrole', 'as' => 'user.'], function(){
-Route::get('usuario','UsuarioController@index');
-Route::get('despesas',['as'=> 'usuario.despesas','uses'=>'UsuarioController@despesas']);
-Route::get('mensalidades',['as'=> 'usuario.mensalidades','uses'=>'UsuarioController@mensalidades']);
+Route::get('usuario',['as'=> 'home','uses'=>'UsuarioController@index']);
+Route::get('despesas',['as'=> 'despesas','uses'=>'UsuarioController@despesas']);
+Route::get('mensalidades',['as'=> 'mensalidades','uses'=>'UsuarioController@mensalidades']);
 });
