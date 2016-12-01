@@ -6,7 +6,7 @@
         <div class="col-md-8 col-md-offset-2">
 
 
-            <a href="{{route('admin.doacaos.index')}}" class="btn btn-default" style="height:40px; width:200px">Editar Cadastro</a>
+            //<a href="{{route('usuario.cadastro')}}" class="btn btn-default" style="height:40px; width:200px">Editar Cadastro</a>
             <br><br>
             <a href="{{route('usuario.mensalidades')}}" class="btn btn-default" style="height:40px; width:200px">Mensalidades</a>
             <br><br>      

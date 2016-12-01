@@ -38,4 +38,11 @@ class UsuarioController extends Controller
         
         return view('usuario.mensalidades', compact('mensalidades'))->with('saldo',$saldo);
     }
+
+
+    public function cadastro(){
+        $user = $this->repository->find($id);
+
+        return view ('users.edit',compact('user'));
+    }
 }
