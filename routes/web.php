@@ -84,3 +84,5 @@ Route::get('usuario/cadastro'	,['as'=> 'cadastro','uses'=>'UsuarioController@cad
 Route::post('usuario/update/{id}',['as'=> 'update','uses'=>'UsuarioController@update']);
 
 });
+
+Route::get('secretario','SecretarioController@index');
