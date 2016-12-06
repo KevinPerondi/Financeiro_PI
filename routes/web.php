@@ -91,7 +91,7 @@ Route::get('home','SecretarioController@index');
 Route::get('cadastro',['as'=> 'cadastro','uses'=>'SecretarioController@cadastro']);
 Route::post('update/{id}',['as'=> 'update','uses'=>'SecretarioController@update']);
 Route::get('users', ['as'=> 'users','uses'=>'SecretarioController@index']);
-Route::get('despesas', ['as'=> 'despesas','uses'=>'SecretarioController@index']);
+Route::get('despesas', ['as'=> 'despesas','uses'=>'SecretarioController@index']); //
 Route::get('doacoes', ['as'=> 'doacaos','uses'=>'SecretarioController@index']);
 
 });
