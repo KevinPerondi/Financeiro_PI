@@ -16,11 +16,11 @@
         <div class="col-md-8 col-md-offset-2">
 
 
-            <a href="{{route('usuario.cadastro')}}" class="btn btn-default" style="height:40px; width:200px">Editar Cadastro</a>
+            <a href="{{route('user.cadastro')}}" class="btn btn-default" style="height:40px; width:200px">Editar Cadastro</a>
             <br><br>
-            <a href="{{route('usuario.mensalidades')}}" class="btn btn-default" style="height:40px; width:200px">Mensalidades</a>
+            <a href="{{route('user.mensalidades')}}" class="btn btn-default" style="height:40px; width:200px">Mensalidades</a>
             <br><br>      
-            <a href="{{route('usuario.despesas')}}" class="btn btn-default" style="height:40px; width:200px">Despesas</a>
+            <a href="{{route('user.despesas')}}" class="btn btn-default" style="height:40px; width:200px">Despesas</a>
            
         </div>
     </div>
