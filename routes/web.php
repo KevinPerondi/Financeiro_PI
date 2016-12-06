@@ -85,6 +85,7 @@ Route::post('usuario/update/{id}',['as'=> 'update','uses'=>'UsuarioController@up
 
 });
 
+
 Route::group(['prefix' => 'secretario','middleware' => 'auth.checkrole:secretario', 'as' => 'secretario.'], function(){
 Route::get('home','SecretarioController@index');
 Route::get('cadastro',['as'=> 'cadastro','uses'=>'SecretarioController@cadastro']);
