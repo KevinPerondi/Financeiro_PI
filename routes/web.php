@@ -18,8 +18,21 @@ Auth::routes();
 
 
 Route::get('/',function (){
-	return view('auth/login'); 
+	if(Auth::check()){
+		if(Auth::user()->role == 'admin'){
+			return view('/home');
+		}
+		elseif(Auth::user()->role == 'user'){
+			return redirect('user/usuario');
+		}
+	}
+	else{
+	return view('auth/login');
+	}    
 });
+
+
+
 
 Route::group(['prefix' => 'admin','middleware' => 'auth.checkrole:admin', 'as' => 'admin.'], function(){
 
@@ -67,6 +80,7 @@ Route::group(['prefix' => 'user','middleware' => 'auth.checkrole:user', 'as' => 
 Route::get('usuario','UsuarioController@index');
 Route::get('usuario/despesas',['as'=> 'despesas','uses'=>'UsuarioController@despesas']);
 Route::get('usuario/mensalidades',['as'=> 'mensalidades','uses'=>'UsuarioController@mensalidades']);
-Route::get('usuario/cadastro',['as'=> 'cadastro','uses'=>'UsuarioController@cadastro']);
+Route::get('usuario/cadastro'	,['as'=> 'cadastro','uses'=>'UsuarioController@cadastro']);
 Route::post('usuario/update/{id}',['as'=> 'update','uses'=>'UsuarioController@update']);
+
 });
