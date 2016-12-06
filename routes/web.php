@@ -35,10 +35,7 @@ Route::get('/',function (){
 
 
 Route::group(['prefix' => 'admin','middleware' => 'auth.checkrole:admin', 'as' => 'admin.'], function(){
-=======
 
-Route::group(['prefix' => 'admin','middleware' => 'auth.checkrole', 'as' => 'admin.'], function(){
->>>>>>> 6a382bbfa092fd3e2b3ad3cd4db9a6233facc733
 Route::get('home', function (){
     return view('home');    
 });
@@ -85,5 +82,4 @@ Route::get('usuario/despesas',['as'=> 'despesas','uses'=>'UsuarioController@desp
 Route::get('usuario/mensalidades',['as'=> 'mensalidades','uses'=>'UsuarioController@mensalidades']);
 Route::get('usuario/cadastro',['as'=> 'cadastro','uses'=>'UsuarioController@cadastro']);
 Route::post('usuario/update/{id}',['as'=> 'update','uses'=>'UsuarioController@update']);
-
 });

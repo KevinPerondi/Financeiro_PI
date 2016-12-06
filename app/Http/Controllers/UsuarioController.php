@@ -54,7 +54,7 @@ class UsuarioController extends Controller
         //dd($data);
         DB::table('users')->where('id','=',$id)->update(['email' => $data['email'], 'telefone' => $data['telefone'], 'endereço' => $data['endereço'] ]);
         $request->session()->flash('alert-success','Usuário modificado com sucesso.');
-        return redirect()->route('usuario.home');
+        return redirect('user/usuario');
         
     }
 

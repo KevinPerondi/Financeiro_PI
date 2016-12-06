@@ -25,7 +25,7 @@ class CheckRole
         }
 
         else if(Auth::user()->role <> $role ){
-            return redirect('/admin/home');
+           return redirect('/admin/home');
         }
         return $next($request);
     }
