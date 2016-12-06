@@ -84,3 +84,13 @@ Route::get('usuario/cadastro'	,['as'=> 'cadastro','uses'=>'UsuarioController@cad
 Route::post('usuario/update/{id}',['as'=> 'update','uses'=>'UsuarioController@update']);
 
 });
+
+Route::group(['prefix' => 'secretario','middleware' => 'auth.checkrole:secretario', 'as' => 'secretario.'], function(){
+Route::get('home','SecretarioController@index');
+Route::get('cadastro',['as'=> 'cadastro','uses'=>'SecretarioController@cadastro']);
+Route::post('update/{id}',['as'=> 'update','uses'=>'SecretarioController@update']);
+Route::get('users', ['as'=> 'users','uses'=>'SecretarioController@index']);
+Route::get('despesas', ['as'=> 'despesas','uses'=>'SecretarioController@index']);
+Route::get('doacoes', ['as'=> 'doacaos','uses'=>'SecretarioController@index']);
+
+});
