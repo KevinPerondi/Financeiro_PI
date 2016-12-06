@@ -18,21 +18,8 @@ Auth::routes();
 
 
 Route::get('/',function (){
-	if(Auth::check()){
-		if(Auth::user()->role == 'admin'){
-			return view('/home');
-		}
-		elseif(Auth::user()->role == 'user'){
-			return redirect()->route('usuario.home');
-		}
-	}
-	else{
-    return view('auth/login');    
-}
+	return view('auth/login'); 
 });
-
-
-
 
 Route::group(['prefix' => 'admin','middleware' => 'auth.checkrole:admin', 'as' => 'admin.'], function(){
 
