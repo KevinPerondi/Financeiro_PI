@@ -28,7 +28,7 @@
                 <td>{{$user->telefone}}</td>
                 <td>{{$user->endereço}}</td>
                 <td>
-                    <a href="{{route('admin.mensalidades.user',['user_id'=>$user->id])}}" class="btn btn-default btn-sm">
+                    <a href="{{route('secretario.mensalidades',['user_id'=>$user->id])}}" class="btn btn-default btn-sm">
                         Mensalidades
                     </a>
                     
@@ -65,7 +65,7 @@
                 <td>{{$userdeletado->telefone}}</td>
                 <td>{{$userdeletado->endereço}}</td>
                 <td>
-                    <a href="{{route('admin.mensalidades.user',['user_id'=>$userdeletado->id])}}" class="btn btn-default btn-sm">
+                    <a href="{{route('secretario.mensalidades',['user_id'=>$userdeletado->id])}}" class="btn btn-default btn-sm">
                         Mensalidades
                     </a>
                     

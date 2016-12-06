@@ -25,6 +25,9 @@ Route::get('/',function (){
 		elseif(Auth::user()->role == 'user'){
 			return redirect('user/usuario');
 		}
+		elseif(Auth::user()->role == 'secretario'){
+			return redirect('secretario/home');
+		}
 	}
 	else{
 	return view('auth/login');
@@ -90,8 +93,9 @@ Route::group(['prefix' => 'secretario','middleware' => 'auth.checkrole:secretari
 Route::get('home','SecretarioController@index');
 Route::get('cadastro',['as'=> 'cadastro','uses'=>'SecretarioController@cadastro']);
 Route::post('update/{id}',['as'=> 'update','uses'=>'SecretarioController@update']);
-Route::get('users', ['as'=> 'users','uses'=>'SecretarioController@index']);
-Route::get('despesas', ['as'=> 'despesas','uses'=>'SecretarioController@index']); //
-Route::get('doacoes', ['as'=> 'doacaos','uses'=>'SecretarioController@index']);
+Route::get('users', ['as'=> 'usuarios','uses'=>'SecretarioController@users']);
+Route::get('despesas', ['as'=> 'despesas','uses'=>'SecretarioController@despesas']); //
+Route::get('doacoes', ['as'=> 'doacoes','uses'=>'SecretarioController@doacaos']);
+Route::get('mensalidades/{id}', ['as'=> 'mensalidades','uses'=>'SecretarioController@mensalidades']);
 
 });

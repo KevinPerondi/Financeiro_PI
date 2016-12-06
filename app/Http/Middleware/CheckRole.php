@@ -19,17 +19,16 @@ class CheckRole
             return redirect('/login');
 
         }
-
-        if(Auth::user()->role <>  $role){
+        if (Auth::user()->role <> 'admin' && Auth::user()->role <>  'user' ){
+           return redirect('/secretario/home');
+        }
+        else if(Auth::user()->role <>  $role){
             return redirect('/user/usuario');
         }
 
         else if(Auth::user()->role <> $role ){
            return redirect('/admin/home');
         }
-        /*else if (Auth::user()->role != 'admin' && Auth::user()->role !=  'user' ){
-           return redirect('/secretario/home');
-        }*/
 
         return $next($request);
     }

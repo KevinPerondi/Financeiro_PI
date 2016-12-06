@@ -31,7 +31,7 @@
         
     </table>
     
-    {!! $despesas->render() !!}
+
 </div>
     
 

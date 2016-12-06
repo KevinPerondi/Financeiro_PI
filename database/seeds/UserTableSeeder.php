@@ -24,6 +24,18 @@ class UserTableSeeder extends Seeder
 
             ]);
 
+            factory(\PI\Models\User::class)->create([
+            'cpf' => '43798018880',
+            'name' => 'User',
+            'email' => 'usuario@usuario.com',
+            'telefone' => '4499540347',
+            'situacao' => 'Ativo',
+            'endereço' => 'rua brAAsil',
+            'password' => bcrypt(123456),
+            'role' => 'user',
+
+            ]);
+
         factory(\PI\Models\User::class)->create([
             'cpf' => '35378232155',
             'name' => 'wesley secretario',
