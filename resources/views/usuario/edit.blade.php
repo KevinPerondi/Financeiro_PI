@@ -23,7 +23,7 @@
         </ul>
     @endif
     
-    {!! Form::model($user,['route'=>['user.update', $user->id]]) !!}
+    {!! Form::model($user,['route'=>['usuario.update', $user->id]]) !!}
     
     <div class="form-group">
         

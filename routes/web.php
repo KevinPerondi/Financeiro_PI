@@ -63,11 +63,10 @@ Route::get('mensalidades/user/{user_id}', ['as'=> 'mensalidades.user','uses'=>'M
 });
 
 
-Route::group(['prefix' => 'user','middleware' => 'auth.checkrole', 'as' => 'user.'], function(){
-Route::get('usuario',['as'=> 'home','uses'=>'UsuarioController@index']);
-Route::get('despesas',['as'=> 'despesas','uses'=>'UsuarioController@despesas']);
-Route::get('mensalidades',['as'=> 'mensalidades','uses'=>'UsuarioController@mensalidades']);
-Route::get('cadastro',['as'=> 'cadastro','uses'=>'UsuarioController@cadastro']);
-Route::post('update',['as'=> 'update','uses'=>'UsuarioController@update']);
-});
+Route::get('usuario/home',['as'=> 'usuario.home','uses'=>'UsuarioController@index']);
+Route::get('usuario/despesas',['as'=> 'usuario.despesas','uses'=>'UsuarioController@despesas']);
+Route::get('usuario/mensalidades',['as'=> 'usuario.mensalidades','uses'=>'UsuarioController@mensalidades']);
+Route::get('usuario/cadastro',['as'=> 'usuario.cadastro','uses'=>'UsuarioController@cadastro']);
+Route::post('usuario/update/{id}',['as'=> 'usuario.update','uses'=>'UsuarioController@update']);
+
 
