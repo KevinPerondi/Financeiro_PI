@@ -41,13 +41,26 @@
 
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <!-- Left Side Of Navbar -->
+            @if(Auth::check())
+               @if(Auth::user()->role == 'admin')
+    
+
                 <ul class="nav navbar-nav">
                     <li><a href="{{ route('admin.users.index') }}">Usuarios</a></li>
                     <li><a href="{{ route('admin.despesas.index') }}">Despesas</a></li>
                     <li><a href="{{ route('admin.doacaos.index') }}">Doações</a></li>
                     <li><a href="{{ route('admin.mensalidades.edit') }}">Mensalidades</a></li>
                 </ul>
-                
+            @endif  
+
+            @if(Auth::user()->role == 'user')
+                <ul class="nav navbar-nav">
+                    <li><a href="{{ route('usuario.despesas') }}">Despesas</a></li>
+                    <li><a href="{{ route('usuario.mensalidades') }}">Mensalidades</a></li>
+                </ul>
+
+            @endif
+        @endif
                 <!-- Right Side Of Navbar -->
                 <ul class="nav navbar-nav navbar-right">
                     <!-- Authentication Links -->

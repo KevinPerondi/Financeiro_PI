@@ -16,13 +16,29 @@
 
 Auth::routes();
 
+
 Route::get('/',function (){
+	if(Auth::check()){
+		if(Auth::user()->role == 'admin'){
+			return view('/home');
+		}
+		elseif(Auth::user()->role == 'user'){
+			return redirect()->route('usuario.home');
+		}
+	}
+	else{
     return view('auth/login');    
+}
 });
 
 
 
+
 Route::group(['prefix' => 'admin','middleware' => 'auth.checkrole:admin', 'as' => 'admin.'], function(){
+=======
+
+Route::group(['prefix' => 'admin','middleware' => 'auth.checkrole', 'as' => 'admin.'], function(){
+>>>>>>> 6a382bbfa092fd3e2b3ad3cd4db9a6233facc733
 Route::get('home', function (){
     return view('home');    
 });
@@ -62,8 +78,12 @@ Route::get('/mensalidades/delete/{id}',['as' => 'mensalidades.delete', 'uses' =>
 Route::get('mensalidades/user/{user_id}', ['as'=> 'mensalidades.user','uses'=>'MensalidadesController@user']);
 });
 
+
 Route::group(['prefix' => 'user','middleware' => 'auth.checkrole:user', 'as' => 'user.'], function(){
 Route::get('usuario','UsuarioController@index');
 Route::get('usuario/despesas',['as'=> 'despesas','uses'=>'UsuarioController@despesas']);
 Route::get('usuario/mensalidades',['as'=> 'mensalidades','uses'=>'UsuarioController@mensalidades']);
+Route::get('usuario/cadastro',['as'=> 'cadastro','uses'=>'UsuarioController@cadastro']);
+Route::post('usuario/update/{id}',['as'=> 'update','uses'=>'UsuarioController@update']);
+
 });

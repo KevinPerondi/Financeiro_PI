@@ -7,6 +7,7 @@ use PI\Http\Requests;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Session;
 use Carbon\Carbon;
+use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Auth;
 
 class UsuarioController extends Controller
@@ -37,4 +38,24 @@ class UsuarioController extends Controller
         
         return view('usuario.mensalidades', compact('mensalidades'))->with('saldo',$saldo);
     }
+
+
+    public function cadastro(){
+        $user_id = Auth::user()->id;
+        $user = DB::table('users')->where('id','=',$user_id)->get();
+       // dd($user);
+
+        return view ('usuario.edit')->with('user',$user[0]);
+    }
+
+    public function update(Requests\UserEditRequest $request, $id){
+        $data = $request->all();
+        $result = DB::table('users')->where('id','=',$id)->first();
+        //dd($data);
+        DB::table('users')->where('id','=',$id)->update(['email' => $data['email'], 'telefone' => $data['telefone'], 'endereço' => $data['endereço'] ]);
+        $request->session()->flash('alert-success','Usuário modificado com sucesso.');
+        return redirect()->route('usuario.home');
+        
+    }
+
 }
