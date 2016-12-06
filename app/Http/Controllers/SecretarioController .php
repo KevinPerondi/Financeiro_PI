@@ -17,7 +17,7 @@ class SecretarioController extends Controller
         $this->repository =$repository;
     }
 	public function index(){
-		return view('secretario.index');
+		return view('secretario.home');
 	}
 
 	public function despesas (\PI\Repositories\DespesaRepositoryEloquent $repository) {
