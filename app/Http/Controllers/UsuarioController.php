@@ -40,8 +40,26 @@ class UsuarioController extends Controller
 
 
     public function cadastro(){
-        $user = $this->repository->find($id);
+        $user_id = Auth::user()->id;
+        $user = DB::table('users')->where('id','=',$user_id)->get();
+       // dd($user);
 
-        return view ('users.edit',compact('user'));
+        return view ('usuario.edit')->with('user',$user[0]);
     }
+
+    public function update(Requests\UserEditRequest $request, $id){
+        $data = $request->all();
+        $result = DB::table('users')->where('id','=',$id)->first();
+        dd($data);
+
+        if ($request->cpf != $result->cpf){
+            return Redirect::back()->with($request->session()->flash('alert-danger','O campo CPF foi alterado'));    
+        }
+        else{
+            $this->repository->update($data,$id);
+            $request->session()->flash('alert-success','Usuário modificado com sucesso.');
+            return redirect()->route('usuario.index');
+        }
+    }
+
 }

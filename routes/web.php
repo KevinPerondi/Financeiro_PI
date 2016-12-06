@@ -66,4 +66,6 @@ Route::group(['prefix' => 'user','middleware' => 'auth.checkrole', 'as' => 'user
 Route::get('usuario',['as'=> 'home','uses'=>'UsuarioController@index']);
 Route::get('despesas',['as'=> 'despesas','uses'=>'UsuarioController@despesas']);
 Route::get('mensalidades',['as'=> 'mensalidades','uses'=>'UsuarioController@mensalidades']);
+Route::get('cadastro',['as'=> 'cadastro','uses'=>'UsuarioController@cadastro']);
+Route::post('update',['as'=> 'update','uses'=>'UsuarioController@update']);
 });
