@@ -55,7 +55,6 @@
 
             @if(Auth::user()->role == 'user')
                 <ul class="nav navbar-nav">
-                    <li><a href="{{ route('usuario.home') }}">Home</a></li>
                     <li><a href="{{ route('usuario.despesas') }}">Despesas</a></li>
                     <li><a href="{{ route('usuario.mensalidades') }}">Mensalidades</a></li>
                 </ul>

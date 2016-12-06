@@ -16,9 +16,21 @@
 
 Auth::routes();
 
+
 Route::get('/',function (){
+	if(Auth::check()){
+		if(Auth::user()->role == 'admin'){
+			return view('/home');
+		}
+		elseif(Auth::user()->role == 'user'){
+			return redirect()->route('usuario.home');
+		}
+	}
+	else{
     return view('auth/login');    
+}
 });
+
 
 
 
