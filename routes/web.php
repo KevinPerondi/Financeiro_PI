@@ -22,7 +22,7 @@ Route::get('/',function (){
 
 
 
-Route::group(['prefix' => 'admin','middleware' => 'auth.checkrole', 'as' => 'admin.'], function(){
+Route::group(['prefix' => 'admin','middleware' => 'auth.checkrole:admin', 'as' => 'admin.'], function(){
 Route::get('home', function (){
     return view('home');    
 });
@@ -62,8 +62,8 @@ Route::get('/mensalidades/delete/{id}',['as' => 'mensalidades.delete', 'uses' =>
 Route::get('mensalidades/user/{user_id}', ['as'=> 'mensalidades.user','uses'=>'MensalidadesController@user']);
 });
 
-//Route::group(['prefix' => 'user','middleware' => 'auth.checkrole', 'as' => 'user.'], function(){
+Route::group(['prefix' => 'user','middleware' => 'auth.checkrole:user', 'as' => 'user.'], function(){
 Route::get('usuario','UsuarioController@index');
-Route::get('usuario/despesas',['as'=> 'user.despesas','uses'=>'UsuarioController@despesas']);
-Route::get('usuario/mensalidades',['as'=> 'user.mensalidades','uses'=>'UsuarioController@mensalidades']);
-//});
+Route::get('usuario/despesas',['as'=> 'despesas','uses'=>'UsuarioController@despesas']);
+Route::get('usuario/mensalidades',['as'=> 'mensalidades','uses'=>'UsuarioController@mensalidades']);
+});
