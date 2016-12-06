@@ -35,10 +35,7 @@ Route::get('/',function (){
 
 
 Route::group(['prefix' => 'admin','middleware' => 'auth.checkrole:admin', 'as' => 'admin.'], function(){
-=======
 
-Route::group(['prefix' => 'admin','middleware' => 'auth.checkrole', 'as' => 'admin.'], function(){
->>>>>>> 6a382bbfa092fd3e2b3ad3cd4db9a6233facc733
 Route::get('home', function (){
     return view('home');    
 });
