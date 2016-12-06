@@ -43,9 +43,15 @@
         
         {!! Form::label('Senha', 'Senha:') !!}
         {!! Form::password('password',array('class' => 'form-control')) !!}
-        
-        
+                
     </div>
+
+    <!--
+    <div class="form-group">
+        <label for = "">Mostrar senha</label>
+        <input type="checkbox" class="" name="showpass" value="0">
+    </div>
+    -->
     
     <div class="form-group">
         {!! Form::submit('Editar Usuario', ['class'=>'btn btn-primary']) !!}
